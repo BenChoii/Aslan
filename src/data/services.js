@@ -1,4 +1,4 @@
-const svc = (name, slug, category, icon, desc, tips, faqs) => ({ name, slug, category, icon, description: desc, tips, faqs });
+const svc = (name, slug, category, icon, lucideIcon, desc, tips, faqs) => ({ name, slug, category, icon, lucideIcon, description: desc, tips, faqs });
 
 export const services = [
   svc('Residential Plumber', 'residential-plumber', 'Plumbing', '🔧',

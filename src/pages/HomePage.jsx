@@ -4,6 +4,40 @@ import { services, serviceCategories } from '../data/services'
 import FAQ from '../components/FAQ'
 import GoogleMap from '../components/GoogleMap'
 import FluentEmoji from '../components/FluentEmoji'
+import {
+  Wrench, Building, ClipboardCheck, HardHat, Flame, Hammer,
+  Cog, Home, Camera, Zap, Lightbulb, Plug,
+  Shirt, CookingPot, Thermometer, Snowflake, Settings,
+  HeartPulse, MapPin, UtensilsCrossed, Cake
+} from 'lucide-react'
+
+// Map each service slug to a Lucide icon component
+const SERVICE_ICONS = {
+  'residential-plumber': Wrench,
+  'commercial-plumber': Building,
+  'licensed-plumber': ClipboardCheck,
+  'plumbing-contractor': HardHat,
+  'water-heaters': Flame,
+  'water-heater-repair': Hammer,
+  'pumps-septic': Cog,
+  'septic-tank-service': Home,
+  'sewer-camera': Camera,
+  'electrical': Zap,
+  'electrician': Lightbulb,
+  'wiring-installation': Plug,
+  'wiring-repair': Wrench,
+  'gas-fitting': Flame,
+  'gas-dryer': Shirt,
+  'gas-range': CookingPot,
+  'gas-furnace-repair': Thermometer,
+  'refrigeration': Snowflake,
+  'sheet-metal': Settings,
+  'heating-repair': HeartPulse,
+  'residential-heating': Flame,
+  'line-locating': MapPin,
+  'restaurant-equipment-repair': UtensilsCrossed,
+  'bakery-equipment-repair': Cake,
+};
 
 const marqueeServices = [
   'Licensed Electricians', 'Emergency Plumbing', 'Gas Fitting & Repair',
@@ -138,14 +172,19 @@ export default function HomePage() {
             <p className="section-subtitle">From electrical and plumbing to gas fitting, refrigeration, and sheet metal — we handle it all with over 40 years of expertise.</p>
           </div>
           <div className="services-grid">
-            {services.map(s => (
-              <Link key={s.slug} to={`/vernon/${s.slug}`} className="service-card">
-                <span className="service-card-icon">{s.icon}</span>
-                <div className="service-card-title">{s.name}</div>
-                <div className="service-card-desc">{s.description}</div>
-                <div className="service-card-arrow">Learn More →</div>
-              </Link>
-            ))}
+            {services.map(s => {
+              const IconComp = SERVICE_ICONS[s.slug];
+              return (
+                <Link key={s.slug} to={`/vernon/${s.slug}`} className="service-card">
+                  <span className="service-card-icon">
+                    {IconComp ? <IconComp size={28} strokeWidth={1.5} /> : s.icon}
+                  </span>
+                  <div className="service-card-title">{s.name}</div>
+                  <div className="service-card-desc">{s.description}</div>
+                  <div className="service-card-arrow">Learn More →</div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
