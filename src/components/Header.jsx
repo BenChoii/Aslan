@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { Phone } from 'lucide-react'
 import { cities } from '../data/cities'
 import { services, serviceCategories } from '../data/services'
 
@@ -47,7 +48,7 @@ export default function Header() {
           </nav>
 
           <a href="tel:2505494444" className="header-phone" style={{ display: 'flex' }}>
-            <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Telephone%20Receiver.png" alt="Phone" style={{ width: '20px', height: '20px' }} />
+            <Phone size={18} />
             <span>250-549-4444</span>
           </a>
 
