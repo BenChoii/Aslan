@@ -71,7 +71,7 @@ export default function Header() {
           <Link key={c.slug} to={`/${c.slug}`} onClick={() => setMobileOpen(false)} style={{ paddingLeft: '20px' }}>{c.name}</Link>
         ))}
         <Link to="/contact" onClick={() => setMobileOpen(false)}>Contact Us</Link>
-        <a href="tel:2505494444" style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '1.2rem', marginTop: '20px', display: 'block', textAlign: 'center', padding: '16px', background: 'rgba(124,186,63,0.1)', borderRadius: '12px' }}>📞 250-549-4444</a>
+        <a href="tel:2505494444" style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '1.2rem', marginTop: '20px', display: 'block', textAlign: 'center', padding: '16px', background: 'rgba(212,165,69,0.1)', borderRadius: '12px' }}>📞 250-549-4444</a>
       </div>
     </>
   )
