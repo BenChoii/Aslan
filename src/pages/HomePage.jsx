@@ -3,6 +3,7 @@ import { cities } from '../data/cities'
 import { services, serviceCategories } from '../data/services'
 import FAQ from '../components/FAQ'
 import GoogleMap from '../components/GoogleMap'
+import FluentEmoji from '../components/FluentEmoji'
 
 const marqueeServices = [
   'Licensed Electricians', 'Emergency Plumbing', 'Gas Fitting & Repair',
@@ -12,12 +13,12 @@ const marqueeServices = [
 ];
 
 const heroServices = [
-  { icon: '⚡', title: 'Electrical', desc: 'Licensed electrical services' },
-  { icon: '🔧', title: 'Plumbing', desc: 'Residential & commercial' },
-  { icon: '🔥', title: 'Gas Fitting', desc: 'Safe, certified gas work' },
-  { icon: '❄️', title: 'Refrigeration', desc: 'Commercial cooling systems' },
-  { icon: '🔩', title: 'Sheet Metal', desc: 'Custom fabrication & HVAC' },
-  { icon: '🌡️', title: 'Heating', desc: '24/7 emergency repair' },
+  { icon: 'zap', title: 'Electrical', desc: 'Licensed electrical services' },
+  { icon: 'wrench', title: 'Plumbing', desc: 'Residential & commercial' },
+  { icon: 'fire', title: 'Gas Fitting', desc: 'Safe, certified gas work' },
+  { icon: 'snowflake', title: 'Refrigeration', desc: 'Commercial cooling systems' },
+  { icon: 'nut', title: 'Sheet Metal', desc: 'Custom fabrication & HVAC' },
+  { icon: 'thermometer', title: 'Heating', desc: '24/7 emergency repair' },
 ];
 
 const testimonials = [
@@ -71,12 +72,12 @@ function RotatingBadge() {
 
 export default function HomePage() {
   return (
-    <div style={{ paddingTop: '40px' }}>
+    <div>
       {/* Hero */}
       <section className="hero">
         <div className="hero-content">
           <div>
-            <div className="hero-badge fade-in">⚡ Trusted Since 1983 — Over 40 Years of Service</div>
+            <div className="hero-badge fade-in"><FluentEmoji name="zap" size={16} /> Trusted Since 1983 — Over 40 Years of Service</div>
             <h1 className="hero-title fade-in fade-in-delay-1" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', fontWeight: 900, lineHeight: 1.05, letterSpacing: '-1px' }}>
               Expert<br />
               <span className="accent">Trade Services</span><br />
@@ -87,7 +88,7 @@ export default function HomePage() {
             </p>
             <div className="hero-actions fade-in fade-in-delay-3">
               <Link to="/contact" className="btn btn-primary" style={{ padding: '16px 36px', fontSize: '1.05rem' }}>Get a Free Quote</Link>
-              <a href="tel:2505494444" className="btn btn-emergency" style={{ padding: '16px 36px', fontSize: '1.05rem' }}>🚨 24/7 Emergency</a>
+              <a href="tel:2505494444" className="btn btn-outline" style={{ padding: '16px 36px', fontSize: '1.05rem' }}><FluentEmoji name="phone" size={18} /> 24/7 Emergency</a>
               <RotatingBadge />
             </div>
             <div className="hero-stats fade-in fade-in-delay-3">
@@ -108,7 +109,7 @@ export default function HomePage() {
           <div className="hero-visual">
             {heroServices.map((s, i) => (
               <div key={i} className={`hero-card fade-in fade-in-delay-${(i % 3) + 1}`}>
-                <div className="hero-card-icon">{s.icon}</div>
+                <div className="hero-card-icon"><FluentEmoji name={s.icon} size={40} /></div>
                 <div className="hero-card-title">{s.title}</div>
                 <div className="hero-card-desc">{s.desc}</div>
               </div>
@@ -132,7 +133,7 @@ export default function HomePage() {
       <section className="section">
         <div className="container">
           <div className="section-header">
-            <div className="section-badge">✦ What We Offer</div>
+            <div className="section-badge"><FluentEmoji name="spark" size={14} /> What We Offer</div>
             <h2 className="section-title">Complete Trade Services Under One Roof</h2>
             <p className="section-subtitle">From electrical and plumbing to gas fitting, refrigeration, and sheet metal — we handle it all with over 40 years of expertise.</p>
           </div>
@@ -154,7 +155,7 @@ export default function HomePage() {
         <div className="container">
           <div className="expertise-grid">
             <div>
-              <div className="section-badge" style={{ marginBottom: '16px' }}>✦ For Commercial & Residential Clients</div>
+              <div className="section-badge" style={{ marginBottom: '16px' }}><FluentEmoji name="trophy" size={14} /> For Commercial & Residential Clients</div>
               <h2 style={{ marginBottom: '20px' }}>Trusted Local Experts — <span style={{ color: 'var(--accent)' }}>Fast, Reliable</span></h2>
               <p style={{ color: 'var(--text-secondary)', marginBottom: '32px', lineHeight: 1.8 }}>
                 Aslan is your trusted partner for all residential and commercial trade needs. With years of hands-on experience, a skilled team, and unwavering commitment to quality, we deliver results you can count on.
@@ -188,7 +189,7 @@ export default function HomePage() {
               </div>
               <div style={{ marginTop: '16px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 {['Bonded & Insured', 'Bryant Authorized', 'Corporate Rates', 'Free Estimates'].map((f, i) => (
-                  <div key={i} className="about-feature"><span className="about-feature-icon">✓</span><span className="about-feature-text">{f}</span></div>
+                  <div key={i} className="about-feature"><span className="about-feature-icon"><FluentEmoji name="check" size={16} /></span><span className="about-feature-text">{f}</span></div>
                 ))}
               </div>
             </div>
@@ -200,7 +201,7 @@ export default function HomePage() {
       <section className="section">
         <div className="container">
           <div className="section-header">
-            <div className="section-badge">✦ How It Works</div>
+            <div className="section-badge"><FluentEmoji name="gear" size={14} /> How It Works</div>
             <h2 className="section-title">Simple Process, Expert Results</h2>
             <p className="section-subtitle">From first call to project completion — here's how we deliver exceptional service every time.</p>
           </div>
@@ -220,14 +221,14 @@ export default function HomePage() {
       <section className="section section-dark">
         <div className="container">
           <div className="section-header">
-            <div className="section-badge">📍 Service Areas</div>
+            <div className="section-badge"><FluentEmoji name="pin" size={14} /> Service Areas</div>
             <h2 className="section-title">Serving the Entire Okanagan Region</h2>
             <p className="section-subtitle">From Vernon to Kamloops, Kelowna to Revelstoke — our team covers the communities you call home.</p>
           </div>
           <div className="cities-grid">
             {cities.map(c => (
               <Link key={c.slug} to={`/${c.slug}`} className="city-card">
-                <div className="city-card-name">📍 {c.name}</div>
+                <div className="city-card-name"><FluentEmoji name="pin" size={16} /> {c.name}</div>
                 <div className="city-card-pop">{c.population}</div>
               </Link>
             ))}
@@ -238,11 +239,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials — Upgraded with gradient cards */}
+      {/* Testimonials */}
       <section className="section">
         <div className="container">
           <div className="section-header">
-            <div className="section-badge">✦ Our Real Satisfaction</div>
+            <div className="section-badge"><FluentEmoji name="star" size={14} /> Our Real Satisfaction</div>
             <h2 className="section-title">Thousands of Satisfied Clients</h2>
             <p className="section-subtitle">Real 5-star reviews from our Google Business Profile — because trust is earned, not advertised.</p>
           </div>
@@ -269,7 +270,7 @@ export default function HomePage() {
       <section className="section section-dark">
         <div className="container">
           <div className="section-header">
-            <div className="section-badge">❓ FAQ</div>
+            <div className="section-badge"><FluentEmoji name="question" size={14} /> FAQ</div>
             <h2 className="section-title">Frequently Asked Questions</h2>
           </div>
           <FAQ items={homeFaqs} />
@@ -284,7 +285,7 @@ export default function HomePage() {
             Whether it's an emergency or a planned project, our team is here for you. Call now or request a free quote.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="tel:2505494444" className="btn btn-emergency" style={{ padding: '18px 40px', fontSize: '1.1rem' }}>🚨 Call 250-549-4444</a>
+            <a href="tel:2505494444" className="btn btn-primary" style={{ padding: '18px 40px', fontSize: '1.1rem' }}><FluentEmoji name="phone" size={20} /> Call 250-549-4444</a>
             <Link to="/contact" className="btn btn-outline" style={{ padding: '18px 40px', fontSize: '1.1rem' }}>Request a Quote</Link>
           </div>
         </div>
