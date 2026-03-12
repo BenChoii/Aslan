@@ -14,9 +14,12 @@ const heroServices = [
 ];
 
 const testimonials = [
-  { text: "Aslan has been our go-to for plumbing and gas fitting for years. Professional, fairly priced, and always reliable. Their 24-hour emergency service saved us during a burst pipe in January.", author: "Dave M.", role: "Homeowner, Vernon" },
-  { text: "We've used Aslan for all our restaurant equipment and refrigeration needs. Fast response time and they understand how critical it is to keep our kitchen running.", author: "Sarah L.", role: "Restaurant Owner, Kelowna" },
-  { text: "Had them rewire our 1970s home and upgrade the panel. Clean work, on schedule, and they handled all the permits. Highly recommend their electrical team.", author: "Mike & Karen T.", role: "Homeowners, Coldstream" },
+  { text: "We have used Aslan for many years for any plumbing, electrical, and HVAC issues in both personal residences and rental properties. The service has always been quick and easy to arrange even on short notice and the techs are knowledgeable, efficient, and friendly.", author: "Sheila Carpenter", role: "Verified Google Review ★★★★★" },
+  { text: "Aslan serviced our system at our chalet at Silver Star Mountain in Vernon. Excellent service: on time, very personable, explained the system, completed repairs and service and at a very reasonable price. I feel in good hands! Highly recommended!", author: "Terry Pearson", role: "Verified Google Review ★★★★★" },
+  { text: "Aslan shows up when they said they will, gets the job done right the first time and the costs are more than fair. I have used them over 20 times over the years for my business and home.", author: "Chris Goodrich", role: "Verified Google Review ★★★★★" },
+  { text: "Very quick Emergency call out service to replace septic pump failure, Very Professional and knowledgeable Tradesman.", author: "Stephen Truscott", role: "Verified Google Review ★★★★★" },
+  { text: "Have called Aslan for several work and home emergencies. From the friendly office staff to the technicians I have always received great compassionate service. They care, know their stuff and are never trying to take advantage.", author: "Tamara Farac", role: "Verified Google Review ★★★★★" },
+  { text: "We have used Aslan's services for 16 years and have had excellent service! They inspect our furnace and hot water tank annually. They have done some major plumbing repairs. Their new plumber Jeremy is fantastic.", author: "Pamela Ades", role: "Verified Google Review ★★★★★" },
 ];
 
 const homeFaqs = [
@@ -148,7 +151,7 @@ export default function HomePage() {
             ))}
           </div>
           <div style={{ marginTop: '40px' }}>
-            <GoogleMap embedUrl={cities[0].mapEmbed} title="Aslan Services — Vernon, BC" />
+            <GoogleMap embedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2571.5!2d-119.272!3d50.267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537dd0072a77a7a5%3A0x0!2s2210+11th+Ave%2C+Vernon%2C+BC+V1T+7X8!5e0!3m2!1sen!2sca!4v1710000000000" title="Aslan Services Ltd — 2210 11th Ave, Vernon, BC" />
           </div>
         </div>
       </section>
