@@ -84,7 +84,7 @@ export default function AboutPage() {
           <p style={{ color: 'var(--text-secondary)', maxWidth: '500px', margin: '0 auto 32px' }}>Contact us today for a free quote or call anytime for emergency service.</p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="tel:2505494444" className="btn btn-primary">📞 250-549-4444</a>
-            <Link to="/contact" className="btn btn-outline">Request a Quote</Link>
+            <a href="tel:2505494444" className="btn btn-outline">Request a Quote</a>
           </div>
         </div>
       </section>

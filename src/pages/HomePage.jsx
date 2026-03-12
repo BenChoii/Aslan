@@ -121,7 +121,7 @@ export default function HomePage() {
               From emergency repairs to full-scale installations, Aslan Services delivers top-of-the-line electrical, plumbing, gas fitting, refrigeration & sheet metal services across the Okanagan.
             </p>
             <div className="hero-actions fade-in fade-in-delay-3">
-              <Link to="/contact" className="btn btn-primary" style={{ padding: '16px 36px', fontSize: '1.05rem' }}>Get a Free Quote</Link>
+              <a href="tel:2505494444" className="btn btn-primary" style={{ padding: '16px 36px', fontSize: '1.05rem' }}>Get a Free Quote</a>
               <a href="tel:2505494444" className="btn btn-outline" style={{ padding: '16px 36px', fontSize: '1.05rem' }}><FluentEmoji name="phone" size={18} /> 24/7 Emergency</a>
               <RotatingBadge />
             </div>
@@ -325,7 +325,7 @@ export default function HomePage() {
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="tel:2505494444" className="btn btn-primary" style={{ padding: '18px 40px', fontSize: '1.1rem' }}><FluentEmoji name="phone" size={20} /> Call 250-549-4444</a>
-            <Link to="/contact" className="btn btn-outline" style={{ padding: '18px 40px', fontSize: '1.1rem' }}>Request a Quote</Link>
+            <a href="tel:2505494444" className="btn btn-outline" style={{ padding: '18px 40px', fontSize: '1.1rem' }}>Request a Quote</a>
           </div>
         </div>
       </section>

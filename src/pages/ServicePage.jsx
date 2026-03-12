@@ -139,7 +139,7 @@ export default function ServicePage() {
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="tel:2505494444" className="btn btn-emergency">🚨 Call 250-549-4444</a>
-            <Link to="/contact" className="btn btn-outline">Request a Quote</Link>
+            <a href="tel:2505494444" className="btn btn-outline">Request a Quote</a>
           </div>
         </div>
       </section>
