@@ -1,0 +1,78 @@
+import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import { cities } from '../data/cities'
+import { services, serviceCategories } from '../data/services'
+
+export default function Header() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+  const isActive = (path) => location.pathname === path ? 'active' : '';
+
+  return (
+    <>
+      <div className="emergency-banner">
+        🚨 24-Hour Emergency Service — Call <a href="tel:2505494444">250-549-4444</a> Now
+      </div>
+      <header className="header" style={{ top: '40px' }}>
+        <div className="header-inner">
+          <Link to="/" className="header-logo">
+            <img src="/logo.png" alt="Aslan Services Ltd Logo" />
+          </Link>
+
+          <nav className="header-nav">
+            <Link to="/" className={isActive('/')}>Home</Link>
+            <Link to="/about" className={isActive('/about')}>About</Link>
+            
+            <div className="dropdown">
+              <span className="header-nav-link dropdown-trigger" style={{ padding: '8px 16px', color: 'var(--text-secondary)', fontWeight: 500, fontSize: '0.95rem', cursor: 'pointer' }}>Services</span>
+              <div className="dropdown-menu" style={{ minWidth: '280px' }}>
+                {serviceCategories.map(cat => (
+                  <div key={cat} style={{ marginBottom: '8px' }}>
+                    <div style={{ padding: '6px 16px', fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '1px' }}>{cat}</div>
+                    {services.filter(s => s.category === cat).map(s => (
+                      <Link key={s.slug} to={`/vernon/${s.slug}`}>{s.name}</Link>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="dropdown">
+              <span className="header-nav-link dropdown-trigger" style={{ padding: '8px 16px', color: 'var(--text-secondary)', fontWeight: 500, fontSize: '0.95rem', cursor: 'pointer' }}>Service Areas</span>
+              <div className="dropdown-menu">
+                {cities.map(c => (
+                  <Link key={c.slug} to={`/${c.slug}`}>{c.name}</Link>
+                ))}
+              </div>
+            </div>
+
+            <Link to="/contact" className={isActive('/contact')}>Contact</Link>
+          </nav>
+
+          <a href="tel:2505494444" className="header-phone" style={{ display: 'flex' }}>
+            📞 <span>250-549-4444</span>
+          </a>
+
+          <button className="mobile-menu-btn" onClick={() => setMobileOpen(!mobileOpen)}>
+            {mobileOpen ? '✕' : '☰'}
+          </button>
+        </div>
+      </header>
+
+      <div className={`mobile-nav ${mobileOpen ? 'open' : ''}`} style={{ top: '120px' }}>
+        <Link to="/" onClick={() => setMobileOpen(false)}>Home</Link>
+        <Link to="/about" onClick={() => setMobileOpen(false)}>About</Link>
+        <div style={{ padding: '14px 0', color: 'var(--accent)', fontWeight: 700, borderBottom: '1px solid var(--border)' }}>Services</div>
+        {services.map(s => (
+          <Link key={s.slug} to={`/vernon/${s.slug}`} onClick={() => setMobileOpen(false)} style={{ paddingLeft: '20px', fontSize: '0.95rem' }}>{s.name}</Link>
+        ))}
+        <div style={{ padding: '14px 0', color: 'var(--accent)', fontWeight: 700, borderBottom: '1px solid var(--border)' }}>Service Areas</div>
+        {cities.map(c => (
+          <Link key={c.slug} to={`/${c.slug}`} onClick={() => setMobileOpen(false)} style={{ paddingLeft: '20px' }}>{c.name}</Link>
+        ))}
+        <Link to="/contact" onClick={() => setMobileOpen(false)}>Contact Us</Link>
+        <a href="tel:2505494444" style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '1.2rem', marginTop: '20px', display: 'block', textAlign: 'center', padding: '16px', background: 'rgba(124,186,63,0.1)', borderRadius: '12px' }}>📞 250-549-4444</a>
+      </div>
+    </>
+  )
+}
