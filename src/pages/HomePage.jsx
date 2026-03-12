@@ -4,6 +4,13 @@ import { services, serviceCategories } from '../data/services'
 import FAQ from '../components/FAQ'
 import GoogleMap from '../components/GoogleMap'
 
+const marqueeServices = [
+  'Licensed Electricians', 'Emergency Plumbing', 'Gas Fitting & Repair',
+  'Commercial Refrigeration', 'Sheet Metal Fabrication', 'Heating Systems',
+  'Water Heater Installation', 'Sewer Camera Inspection', 'Line Locating',
+  '24/7 Emergency Response', 'Residential & Commercial', 'Serving Since 1983',
+];
+
 const heroServices = [
   { icon: '⚡', title: 'Electrical', desc: 'Licensed electrical services' },
   { icon: '🔧', title: 'Plumbing', desc: 'Residential & commercial' },
@@ -22,6 +29,20 @@ const testimonials = [
   { text: "We have used Aslan's services for 16 years and have had excellent service! They inspect our furnace and hot water tank annually. They have done some major plumbing repairs. Their new plumber Jeremy is fantastic.", author: "Pamela Ades", role: "Verified Google Review ★★★★★" },
 ];
 
+const expertiseAreas = [
+  { label: 'Electrical Services', value: 98 },
+  { label: 'Plumbing & Water', value: 96 },
+  { label: 'Gas Fitting & HVAC', value: 95 },
+  { label: 'Commercial Projects', value: 90 },
+];
+
+const processSteps = [
+  { num: '01', title: 'Call or Request', desc: 'Reach us 24/7 by phone or online. Describe your project or emergency.' },
+  { num: '02', title: 'Free Assessment', desc: 'We assess the situation and provide a clear, fair quote — no hidden fees.' },
+  { num: '03', title: 'Expert Service', desc: 'Our licensed technicians complete the work to code with quality materials.' },
+  { num: '04', title: 'Your Satisfaction', desc: 'We stand behind every job with professional guarantees and follow-up support.' },
+];
+
 const homeFaqs = [
   { q: 'What areas does Aslan Services cover?', a: 'We serve Vernon, Coldstream, Armstrong, Enderby, Lumby, Lake Country, Salmon Arm, Kelowna, West Kelowna, Penticton, Revelstoke, Kamloops, and Spallumcheen — the entire Okanagan and beyond.' },
   { q: 'Do you offer 24-hour emergency service?', a: 'Yes! Call 250-549-4444 anytime for plumbing, electrical, heating, and gas emergencies. We respond day or night, weekends and holidays.' },
@@ -29,6 +50,24 @@ const homeFaqs = [
   { q: 'How long has Aslan Services been in business?', a: 'Since 1983 — over 40 years of trusted service in the Okanagan region.' },
   { q: 'Do you offer free estimates?', a: 'Yes, we provide free quotes for most projects. Call us or fill out our contact form to get started.' },
 ];
+
+function RotatingBadge() {
+  return (
+    <div className="rotating-badge">
+      <div className="rotating-badge-text">
+        <svg viewBox="0 0 120 120">
+          <defs>
+            <path id="circle" d="M 60,60 m -45,0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0" />
+          </defs>
+          <text>
+            <textPath href="#circle">• SINCE 1983 • LICENSED • BONDED • INSURED </textPath>
+          </text>
+        </svg>
+      </div>
+      <div className="rotating-badge-icon">→</div>
+    </div>
+  );
+}
 
 export default function HomePage() {
   return (
@@ -38,19 +77,18 @@ export default function HomePage() {
         <div className="hero-content">
           <div>
             <div className="hero-badge fade-in">⚡ Trusted Since 1983 — Over 40 Years of Service</div>
-            <h1 className="hero-title fade-in fade-in-delay-1">
-              Your Trusted <span className="accent">Electrical, Plumbing</span> & Gas Fitting Experts
+            <h1 className="hero-title fade-in fade-in-delay-1" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', fontWeight: 900, lineHeight: 1.05, letterSpacing: '-1px' }}>
+              Expert<br />
+              <span className="accent">Trade Services</span><br />
+              You Can Trust
             </h1>
             <p className="hero-subtitle fade-in fade-in-delay-2">
-              From emergency repairs to full-scale installations, Aslan Services delivers top-of-the-line trade services for residential, commercial, and industrial clients across the Okanagan.
+              From emergency repairs to full-scale installations, Aslan Services delivers top-of-the-line electrical, plumbing, gas fitting, refrigeration & sheet metal services across the Okanagan.
             </p>
             <div className="hero-actions fade-in fade-in-delay-3">
-              <Link to="/contact" className="btn btn-primary">Get a Free Quote</Link>
-              <a href="tel:2505494444" className="btn btn-emergency">🚨 24/7 Emergency</a>
-              <div className="hero-phone">
-                <span>Call Now</span>
-                <strong>250-549-4444</strong>
-              </div>
+              <Link to="/contact" className="btn btn-primary" style={{ padding: '16px 36px', fontSize: '1.05rem' }}>Get a Free Quote</Link>
+              <a href="tel:2505494444" className="btn btn-emergency" style={{ padding: '16px 36px', fontSize: '1.05rem' }}>🚨 24/7 Emergency</a>
+              <RotatingBadge />
             </div>
             <div className="hero-stats fade-in fade-in-delay-3">
               <div className="hero-stat">
@@ -79,11 +117,22 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Scrolling Marquee */}
+      <div className="marquee-section">
+        <div className="marquee-track">
+          {[...marqueeServices, ...marqueeServices].map((s, i) => (
+            <div key={i} className="marquee-item">
+              <span className="marquee-dot" />{s}
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Services */}
       <section className="section">
         <div className="container">
           <div className="section-header">
-            <div className="section-badge">🛠️ Our Services</div>
+            <div className="section-badge">✦ What We Offer</div>
             <h2 className="section-title">Complete Trade Services Under One Roof</h2>
             <p className="section-subtitle">From electrical and plumbing to gas fitting, refrigeration, and sheet metal — we handle it all with over 40 years of expertise.</p>
           </div>
@@ -100,42 +149,75 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About */}
+      {/* Expertise & About */}
       <section className="section section-dark">
         <div className="container">
-          <div className="about-grid">
-            <div className="about-content">
-              <div className="section-badge">→ About Us</div>
-              <h2>A Team of Certified Professionals Serving the Okanagan</h2>
-              <p>Since 1983, ASLAN Electrical, Plumbing, Gas Fitting, Refrigeration & Sheet Metal Services Ltd. has provided top-of-the-line service and customer care for residential, commercial, and industrial clients in Vernon BC and beyond.</p>
-              <p>Our commitment to quality is demonstrated by our use of Bryant products, known throughout the industry for their reliability and performance. We are fully bonded, licensed, and insured — so you can trust that every job is done right.</p>
-              <div className="about-features">
-                <div className="about-feature"><span className="about-feature-icon">✓</span><span className="about-feature-text">Bonded, Licensed & Insured</span></div>
-                <div className="about-feature"><span className="about-feature-icon">✓</span><span className="about-feature-text">24/7 Emergency Response</span></div>
-                <div className="about-feature"><span className="about-feature-icon">✓</span><span className="about-feature-text">Bryant Authorized Dealer</span></div>
-                <div className="about-feature"><span className="about-feature-icon">✓</span><span className="about-feature-text">Corporate Rates Available</span></div>
-              </div>
+          <div className="expertise-grid">
+            <div>
+              <div className="section-badge" style={{ marginBottom: '16px' }}>✦ For Commercial & Residential Clients</div>
+              <h2 style={{ marginBottom: '20px' }}>Trusted Local Experts — <span style={{ color: 'var(--accent)' }}>Fast, Reliable</span></h2>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '32px', lineHeight: 1.8 }}>
+                Aslan is your trusted partner for all residential and commercial trade needs. With years of hands-on experience, a skilled team, and unwavering commitment to quality, we deliver results you can count on.
+              </p>
+              {expertiseAreas.map((e, i) => (
+                <div key={i} className="expertise-bar-group">
+                  <div className="expertise-bar-header">
+                    <span className="expertise-bar-label">{e.label}</span>
+                    <span className="expertise-bar-value">{e.value}%</span>
+                  </div>
+                  <div className="expertise-bar-track">
+                    <div className="expertise-bar-fill" style={{ width: `${e.value}%` }} />
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="about-visual">
-              <div className="about-stat-card">
-                <div className="about-stat-number" style={{ color: 'var(--accent)' }}>40+</div>
-                <div className="about-stat-label">Years in Business</div>
+            <div>
+              <div className="about-visual">
+                <div className="about-stat-card">
+                  <div className="about-stat-number" style={{ color: 'var(--accent)' }}>40+</div>
+                  <div className="about-stat-label">Years in Business</div>
+                </div>
+                <div className="about-stat-card">
+                  <div className="about-stat-number" style={{ color: 'var(--accent)' }}>24/7</div>
+                  <div className="about-stat-label">Emergency Service</div>
+                </div>
+                <div className="about-stat-card accent-card">
+                  <div className="about-stat-number">100%</div>
+                  <div className="about-stat-label">Licensed & Insured</div>
+                </div>
               </div>
-              <div className="about-stat-card">
-                <div className="about-stat-number" style={{ color: 'var(--accent)' }}>24/7</div>
-                <div className="about-stat-label">Emergency Service</div>
-              </div>
-              <div className="about-stat-card accent-card">
-                <div className="about-stat-number">100%</div>
-                <div className="about-stat-label">Licensed & Insured</div>
+              <div style={{ marginTop: '16px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                {['Bonded & Insured', 'Bryant Authorized', 'Corporate Rates', 'Free Estimates'].map((f, i) => (
+                  <div key={i} className="about-feature"><span className="about-feature-icon">✓</span><span className="about-feature-text">{f}</span></div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Service Areas */}
+      {/* How It Works */}
       <section className="section">
+        <div className="container">
+          <div className="section-header">
+            <div className="section-badge">✦ How It Works</div>
+            <h2 className="section-title">Simple Process, Expert Results</h2>
+            <p className="section-subtitle">From first call to project completion — here's how we deliver exceptional service every time.</p>
+          </div>
+          <div className="process-grid">
+            {processSteps.map((s, i) => (
+              <div key={i} className="process-step">
+                <div className="process-step-number">{s.num}</div>
+                <div className="process-step-title">{s.title}</div>
+                <div className="process-step-desc">{s.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Areas */}
+      <section className="section section-dark">
         <div className="container">
           <div className="section-header">
             <div className="section-badge">📍 Service Areas</div>
@@ -156,21 +238,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="section section-dark">
+      {/* Testimonials — Upgraded with gradient cards */}
+      <section className="section">
         <div className="container">
           <div className="section-header">
-            <div className="section-badge">⭐ Testimonials</div>
-            <h2 className="section-title">What Our Clients Say</h2>
-            <p className="section-subtitle">We're proud of our reputation for quality work and excellent customer service across the Okanagan.</p>
+            <div className="section-badge">✦ Our Real Satisfaction</div>
+            <h2 className="section-title">Thousands of Satisfied Clients</h2>
+            <p className="section-subtitle">Real 5-star reviews from our Google Business Profile — because trust is earned, not advertised.</p>
           </div>
           <div className="testimonials-grid">
             {testimonials.map((t, i) => (
-              <div key={i} className="testimonial-card">
+              <div key={i} className="testimonial-card-v2">
+                <span className="quote-mark">"</span>
                 <div className="testimonial-stars">★★★★★</div>
                 <p className="testimonial-text">"{t.text}"</p>
-                <div className="testimonial-author">{t.author}</div>
-                <div className="testimonial-role">{t.role}</div>
+                <div className="testimonial-footer">
+                  <div className="testimonial-avatar">{t.author.charAt(0)}</div>
+                  <div className="testimonial-meta">
+                    <div className="testimonial-author">{t.author}</div>
+                    <div className="testimonial-role">{t.role}</div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -178,7 +266,7 @@ export default function HomePage() {
       </section>
 
       {/* FAQ */}
-      <section className="section">
+      <section className="section section-dark">
         <div className="container">
           <div className="section-header">
             <div className="section-badge">❓ FAQ</div>
@@ -189,15 +277,15 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA */}
-      <section className="section section-dark" style={{ textAlign: 'center' }}>
+      <section className="section" style={{ textAlign: 'center' }}>
         <div className="container">
-          <h2 style={{ marginBottom: '16px' }}>Ready to Get Started?</h2>
+          <h2 style={{ marginBottom: '16px', fontSize: 'clamp(2rem, 4vw, 3rem)' }}>Ready to Get Started?</h2>
           <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto 32px', fontSize: '1.1rem' }}>
             Whether it's an emergency or a planned project, our team is here for you. Call now or request a free quote.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="tel:2505494444" className="btn btn-emergency">🚨 Call 250-549-4444</a>
-            <Link to="/contact" className="btn btn-outline">Request a Quote</Link>
+            <a href="tel:2505494444" className="btn btn-emergency" style={{ padding: '18px 40px', fontSize: '1.1rem' }}>🚨 Call 250-549-4444</a>
+            <Link to="/contact" className="btn btn-outline" style={{ padding: '18px 40px', fontSize: '1.1rem' }}>Request a Quote</Link>
           </div>
         </div>
       </section>
