@@ -52,7 +52,7 @@ export default function ServicePage() {
               <h2>Why Choose Aslan for {service.name} in {city.name}?</h2>
               <p>When you need reliable {service.name.toLowerCase()} in {city.name}, Aslan Services delivers. Here's what sets us apart:</p>
               <ul className="tips-list">
-                <li><strong>40+ Years of Experience</strong> — Serving the Okanagan since 1983 with proven expertise.</li>
+                <li><strong>44+ Years of Experience</strong> — Serving the Okanagan since 1983 with proven expertise.</li>
                 <li><strong>Licensed & Insured</strong> — Fully bonded, licensed, and insured for complete peace of mind.</li>
                 <li><strong>24/7 Emergency Response</strong> — Day or night, weekends and holidays — we're there when you need us.</li>
                 <li><strong>Fair, Transparent Pricing</strong> — Free quotes and no hidden fees on every project.</li>

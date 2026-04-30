@@ -205,6 +205,57 @@ export const cities = [
     population: '~100,000'
   },
   {
+    name: 'Cherryville',
+    slug: 'cherryville',
+    lat: 50.2581,
+    lng: -118.6258,
+    mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20570.45!2d-118.65!3d50.26!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537dbb5e3a8d8d3d%3A0x52e0c7efe99e5c!2sCherryville%2C%20BC!5e0!3m2!1sen!2sca!4v1710000000000',
+    description: 'Cherryville is a peaceful rural community east of Lumby in the Monashee foothills, surrounded by forests, farmland, and the headwaters of the Shuswap River. Known for its friendly small-town spirit and outdoor recreation, Cherryville is home to ranchers, retirees, and families seeking a quiet country lifestyle.',
+    landmarks: ['Monashee Mountains', 'Sugar Lake', 'Cherry Ridge', 'Cherryville Community Hall', 'Shuswap River Headwaters'],
+    funFacts: [
+      'Cherryville got its name from the wild cherry trees that once dotted the area when settlers first arrived.',
+      'Sugar Lake near Cherryville is a hidden gem for fishing, paddling, and lakeside camping.',
+      'The community is the gateway to the Monashee wilderness — popular with hunters, hikers, and snowmobilers.'
+    ],
+    nearbyAreas: ['Lumby', 'Vernon', 'Coldstream'],
+    climate: 'Cherryville\'s mountain elevation brings cold, snowy winters and warm summers. Many properties rely on well water, septic systems, and oil or wood heating — services that benefit from regular professional maintenance.',
+    population: '~1,100'
+  },
+  {
+    name: 'Peachland',
+    slug: 'peachland',
+    lat: 49.7733,
+    lng: -119.7351,
+    mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41423.45!2d-119.77!3d49.78!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537d8a25c42b3b67%3A0x9f7c5e6b2a5d4c3!2sPeachland%2C%20BC!5e0!3m2!1sen!2sca!4v1710000000000',
+    description: 'Peachland is a charming lakeside district on the western shore of Okanagan Lake between West Kelowna and Summerland. Known for its small-town feel, scenic waterfront promenade, and orchard heritage, Peachland combines resort living with quiet residential communities.',
+    landmarks: ['Okanagan Lake Waterfront', 'Hardy Falls Regional Park', 'Pincushion Mountain', 'Antlers Beach', 'Historic Peachland Schoolhouse'],
+    funFacts: [
+      'Peachland was named for the peach orchards that once flourished along its lakeside benches.',
+      'The Hardy Falls boardwalk is one of the most popular short hikes in the Okanagan, especially during the Kokanee salmon run each fall.',
+      'Pincushion Mountain offers a steep but rewarding hike with panoramic views over Okanagan Lake.'
+    ],
+    nearbyAreas: ['West Kelowna', 'Summerland', 'Kelowna'],
+    climate: 'Peachland enjoys a warm, dry Okanagan climate with mild winters by BC Interior standards. Lakeside homes benefit from regular HVAC and plumbing maintenance to handle summer heat and occasional winter freezes.',
+    population: '~5,800'
+  },
+  {
+    name: 'Summerland',
+    slug: 'summerland',
+    lat: 49.5970,
+    lng: -119.6705,
+    mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41523.45!2d-119.71!3d49.60!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537d8b71d8a4e55f%3A0x6bfad5d52fd0c56!2sSummerland%2C%20BC!5e0!3m2!1sen!2sca!4v1710000000000',
+    description: 'Summerland is a picturesque district on the western shore of Okanagan Lake between Peachland and Penticton. Famous for its orchards, vineyards, and the Kettle Valley Steam Railway, Summerland combines agricultural heritage with growing residential and tourism communities.',
+    landmarks: ['Kettle Valley Steam Railway', 'Sun-Oka Beach Provincial Park', 'Summerland Ornamental Gardens', 'Giant\'s Head Mountain', 'Bottleneck Drive Wineries'],
+    funFacts: [
+      'The Kettle Valley Steam Railway is one of Canada\'s last operational heritage steam trains, offering scenic rides through Summerland\'s orchards.',
+      'Summerland\'s Bottleneck Drive features a renowned cluster of boutique wineries and cideries.',
+      'Giant\'s Head Mountain is a popular hike offering 360-degree views of Okanagan Lake and the surrounding valley.'
+    ],
+    nearbyAreas: ['Peachland', 'Penticton', 'West Kelowna'],
+    climate: 'Summerland enjoys one of the warmest, sunniest climates in Canada, with hot summers and mild winters. Air conditioning, irrigation systems, and efficient water heating are key services for the area.',
+    population: '~12,000'
+  },
+  {
     name: 'Spallumcheen',
     slug: 'spallumcheen',
     lat: 50.4340,

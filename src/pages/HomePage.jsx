@@ -8,7 +8,7 @@ import {
   Wrench, Building, ClipboardCheck, HardHat, Flame, Hammer,
   Cog, Home, Camera, Zap, Lightbulb, Plug,
   Shirt, CookingPot, Thermometer, Snowflake, Settings,
-  HeartPulse, MapPin, UtensilsCrossed, Cake
+  HeartPulse, MapPin, UtensilsCrossed, Cake, Fuel
 } from 'lucide-react'
 
 // Map each service slug to a Lucide icon component
@@ -30,6 +30,7 @@ const SERVICE_ICONS = {
   'gas-dryer': Shirt,
   'gas-range': CookingPot,
   'gas-furnace-repair': Thermometer,
+  'oil-furnace': Fuel,
   'refrigeration': Snowflake,
   'sheet-metal': Settings,
   'heating-repair': HeartPulse,
@@ -79,10 +80,10 @@ const processSteps = [
 ];
 
 const homeFaqs = [
-  { q: 'What areas does Aslan Services cover?', a: 'We serve Vernon, Coldstream, Armstrong, Enderby, Lumby, Lake Country, Salmon Arm, Kelowna, West Kelowna, Penticton, Revelstoke, Kamloops, and Spallumcheen — the entire Okanagan and beyond.' },
+  { q: 'What areas does Aslan Services cover?', a: 'We serve Vernon, Coldstream, Armstrong, Enderby, Lumby, Cherryville, Lake Country, Salmon Arm, Kelowna, West Kelowna, Peachland, Summerland, Penticton, Revelstoke, Kamloops, and Spallumcheen — the entire Okanagan and beyond.' },
   { q: 'Do you offer 24-hour emergency service?', a: 'Yes! Call 250-549-4444 anytime for plumbing, electrical, heating, and gas emergencies. We respond day or night, weekends and holidays.' },
   { q: 'Are you licensed and insured?', a: 'Absolutely. We hold Gas CL #LGA0002702, Electrical CL #LEL0011310, and Boiler Class Reference #LBP0046269. We are fully bonded, licensed, and insured.' },
-  { q: 'How long has Aslan Services been in business?', a: 'Since 1983 — over 40 years of trusted service in the Okanagan region.' },
+  { q: 'How long has Aslan Services been in business?', a: 'Since 1983 — over 44 years of trusted service in the Okanagan region.' },
   { q: 'Do you offer free estimates?', a: 'Yes, we provide free quotes for most projects. Call us or fill out our contact form to get started.' },
 ];
 
@@ -111,7 +112,7 @@ export default function HomePage() {
       <section className="hero">
         <div className="hero-content">
           <div>
-            <div className="hero-badge fade-in"><FluentEmoji name="zap" size={16} /> Trusted Since 1983 — Over 40 Years of Service</div>
+            <div className="hero-badge fade-in"><FluentEmoji name="zap" size={16} /> Trusted Since 1983 — Over 44 Years of Service</div>
             <h1 className="hero-title fade-in fade-in-delay-1" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', fontWeight: 900, lineHeight: 1.05, letterSpacing: '-1px' }}>
               Expert<br />
               <span className="accent">Trade Services</span><br />
@@ -127,7 +128,7 @@ export default function HomePage() {
             </div>
             <div className="hero-stats fade-in fade-in-delay-3">
               <div className="hero-stat">
-                <div className="hero-stat-number">40+</div>
+                <div className="hero-stat-number">44+</div>
                 <div className="hero-stat-label">Years Experience</div>
               </div>
               <div className="hero-stat">
@@ -135,7 +136,7 @@ export default function HomePage() {
                 <div className="hero-stat-label">Emergency Service</div>
               </div>
               <div className="hero-stat">
-                <div className="hero-stat-number">13+</div>
+                <div className="hero-stat-number">16+</div>
                 <div className="hero-stat-label">Cities Served</div>
               </div>
             </div>
@@ -169,7 +170,7 @@ export default function HomePage() {
           <div className="section-header">
             <div className="section-badge"><FluentEmoji name="spark" size={14} /> What We Offer</div>
             <h2 className="section-title">Complete Trade Services Under One Roof</h2>
-            <p className="section-subtitle">From electrical and plumbing to gas fitting, refrigeration, and sheet metal — we handle it all with over 40 years of expertise.</p>
+            <p className="section-subtitle">From electrical and plumbing to gas fitting, refrigeration, and sheet metal — we handle it all with over 44 years of expertise.</p>
           </div>
           <div className="services-grid">
             {services.map(s => {
@@ -214,7 +215,7 @@ export default function HomePage() {
             <div>
               <div className="about-visual">
                 <div className="about-stat-card">
-                  <div className="about-stat-number" style={{ color: 'var(--accent)' }}>40+</div>
+                  <div className="about-stat-number" style={{ color: 'var(--accent)' }}>44+</div>
                   <div className="about-stat-label">Years in Business</div>
                 </div>
                 <div className="about-stat-card">

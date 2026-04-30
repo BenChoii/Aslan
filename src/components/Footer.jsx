@@ -38,9 +38,9 @@ export default function Footer() {
           <div>
             <h4 className="footer-title">Contact</h4>
             <ul className="footer-links">
-              <li style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>📍 2210 11 Avenue<br />Vernon, BC V1T 7X8</li>
+              <li style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem' }}>📍 2210 11 Avenue<br />Vernon, BC V1T 7X8</li>
               <li style={{ marginTop: '12px' }}><a href="tel:2505494444">📞 250-549-4444</a></li>
-              <li style={{ marginTop: '12px', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+              <li style={{ marginTop: '12px', color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem' }}>
                 🕐 Mon-Fri: 7:30 AM – 5:00 PM<br />
                 Weekends & After Hours: Emergency Service
               </li>
