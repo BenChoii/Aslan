@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { cities } from '../data/cities'
 import { services, serviceCategories } from '../data/services'
+import { galleryPhotos } from '../data/gallery'
 import FAQ from '../components/FAQ'
 import GoogleMap from '../components/GoogleMap'
 import FluentEmoji from '../components/FluentEmoji'
@@ -257,8 +258,33 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Service Areas */}
+      {/* Our Work */}
       <section className="section section-dark">
+        <div className="container">
+          <div className="section-header">
+            <div className="section-badge"><FluentEmoji name="spark" size={14} /> Our Work</div>
+            <h2 className="section-title">Recent Projects</h2>
+            <p className="section-subtitle">A few snapshots from the field — real jobs across the Okanagan, completed by the Aslan team.</p>
+          </div>
+          <div className="gallery-grid gallery-grid-home">
+            {galleryPhotos.slice(0, 6).map(p => (
+              <Link key={p.src} to="/gallery" className="gallery-tile" aria-label={`View ${p.title}`}>
+                <img src={p.src} alt={p.alt} loading="lazy" />
+                <div className="gallery-tile-overlay">
+                  <div className="gallery-tile-category">{p.category}</div>
+                  <div className="gallery-tile-title">{p.title}</div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '40px' }}>
+            <Link to="/gallery" className="btn btn-outline">View Full Gallery →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Areas */}
+      <section className="section">
         <div className="container">
           <div className="section-header">
             <div className="section-badge"><FluentEmoji name="pin" size={14} /> Service Areas</div>

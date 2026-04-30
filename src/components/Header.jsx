@@ -44,6 +44,7 @@ export default function Header() {
               </div>
             </div>
 
+            <Link to="/gallery" className={isActive('/gallery')}>Our Work</Link>
             <Link to="/contact" className={isActive('/contact')}>Contact</Link>
           </nav>
 
@@ -69,6 +70,7 @@ export default function Header() {
         {cities.map(c => (
           <Link key={c.slug} to={`/${c.slug}`} onClick={() => setMobileOpen(false)} style={{ paddingLeft: '20px' }}>{c.name}</Link>
         ))}
+        <Link to="/gallery" onClick={() => setMobileOpen(false)}>Our Work</Link>
         <Link to="/contact" onClick={() => setMobileOpen(false)}>Contact Us</Link>
         <a href="tel:2505494444" style={{ color: 'var(--accent-dark)', fontWeight: 700, fontSize: '1.2rem', marginTop: '20px', display: 'block', textAlign: 'center', padding: '16px', background: 'rgba(27,45,91,0.08)', borderRadius: '12px' }}>📞 250-549-4444</a>
       </div>
