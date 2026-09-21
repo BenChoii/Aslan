@@ -1,5 +1,7 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/industries/:industry", "destination": "/industries/:industry/index.html" },
+    { "source": "/:city/:service", "destination": "/:city/:service/index.html" },
+    { "source": "/:page", "destination": "/:page/index.html" }
   ]
 }

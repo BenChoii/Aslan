@@ -24,6 +24,7 @@ export default function Header() {
             <div className="dropdown">
               <span className="header-nav-link dropdown-trigger" style={{ padding: '8px 16px', color: '#3a4a5e', fontWeight: 500, fontSize: '0.95rem', cursor: 'pointer' }}>Services</span>
               <div className="dropdown-menu" style={{ minWidth: '280px' }}>
+                <Link to="/industries">Business Equipment Repairs →</Link>
                 {serviceCategories.map(cat => (
                   <div key={cat} style={{ marginBottom: '8px' }}>
                     <div style={{ padding: '6px 16px', fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent-dark)', textTransform: 'uppercase', letterSpacing: '1px' }}>{cat}</div>
@@ -62,6 +63,7 @@ export default function Header() {
       <div className={`mobile-nav ${mobileOpen ? 'open' : ''}`}>
         <Link to="/" onClick={() => setMobileOpen(false)}>Home</Link>
         <Link to="/about" onClick={() => setMobileOpen(false)}>About</Link>
+        <Link to="/industries" onClick={() => setMobileOpen(false)}>Business Equipment Repairs</Link>
         <Link to="/contractor-referrals" onClick={() => setMobileOpen(false)}>Contractor Referrals</Link>
         <div style={{ padding: '14px 0', color: 'var(--accent-dark)', fontWeight: 700, borderBottom: '1px solid rgba(0,0,0,0.06)' }}>Services</div>
         {services.map(s => (

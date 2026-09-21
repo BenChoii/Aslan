@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { cities } from '../data/cities'
 import { services } from '../data/services'
+import { industries } from '../data/industries'
 import FAQ from '../components/FAQ'
 import GoogleMap from '../components/GoogleMap'
 import FluentEmoji from '../components/FluentEmoji'
@@ -299,6 +300,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <section className="section section-dark"><div className="container">
+        <div className="section-header"><div className="section-badge">Commercial Equipment Support</div><h2 className="section-title">Repairs for the Way Your Business Works</h2><p className="section-subtitle">A deli slicer that will not start. A laundry dryer without heat. A cooler losing temperature. Find service information for your operation.</p></div>
+        <div className="industry-grid">{industries.map(i => <Link className="service-card" to={`/industries/${i.slug}`} key={i.slug}><h3 className="service-card-title">{i.shortName}</h3><p>{i.equipment.slice(0,2).join(' · ')}</p><span className="service-card-arrow">Equipment &amp; repair questions →</span></Link>)}</div>
+      </div></section>
 
       {/* Service Areas */}
       <section className="section">

@@ -1,6 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { getCityBySlug, cities } from '../data/cities'
 import { services, serviceCategories } from '../data/services'
+import { industries, cityIndustries } from '../data/industries'
 import FAQ from '../components/FAQ'
 import GoogleMap from '../components/GoogleMap'
 import CTA from '../components/CTA'
@@ -25,7 +26,7 @@ export default function CityPage() {
           <div className="breadcrumb">
             <Link to="/">Home</Link><span>/</span><span className="current">{city.name}</span>
           </div>
-          <h1>Electrical, Plumbing & Trade Services in <span style={{ color: 'var(--accent)' }}>{city.name}, BC</span></h1>
+          <h1>Repairs &amp; Maintenance in <span style={{ color: 'var(--accent)' }}>{city.name}, BC</span></h1>
           <p className="page-hero-subtitle">{city.description}</p>
         </div>
       </section>
@@ -38,6 +39,11 @@ export default function CityPage() {
               <p>Aslan Services Ltd has been proudly serving {city.name} and the greater Okanagan since 1983. Whether you need emergency plumbing repair, electrical upgrades, gas fitting, refrigeration service, or custom sheet metal work, our licensed and insured team delivers exceptional results every time.</p>
               <p>{city.climate}</p>
 
+              {cityIndustries[city.slug] && <section id="business-repairs" className="city-industry-section">
+                <h2>Equipment Repairs for {city.name} Businesses</h2>
+                <p>{cityIndustries[city.slug].intro}</p>
+                <div className="related-grid">{cityIndustries[city.slug].slugs.map(n => industries[n]).map(i => <Link className="service-card" key={i.slug} to={`/industries/${i.slug}`}><h3 className="service-card-title">{i.shortName}</h3><p>{i.equipment.slice(0,2).join(' · ')}</p><span className="service-card-arrow">Repair questions →</span></Link>)}</div>
+              </section>}
               <h2>All Services Available in {city.name}</h2>
               {serviceCategories.map(cat => (
                 <div key={cat} style={{ marginBottom: '32px' }}>

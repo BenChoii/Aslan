@@ -19,6 +19,7 @@ export default function Footer() {
 
           <div>
             <h4 className="footer-title">Services</h4>
+            <Link to="/industries">Business Equipment Repairs →</Link><br />
             <Link to="/contractor-referrals">Contractor Referrals →</Link>
             <ul className="footer-links">
               {serviceCategories.map(cat => (

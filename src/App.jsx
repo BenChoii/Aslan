@@ -8,6 +8,7 @@ import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import CityPage from './pages/CityPage'
 import ServicePage from './pages/ServicePage'
+import IndustryPage from './pages/IndustryPage'
 import ReferralPage from './pages/ReferralPage'
 import GalleryPage from './pages/GalleryPage'
 
@@ -28,6 +29,8 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/industries" element={<IndustryPage />} />
+          <Route path="/industries/:industrySlug" element={<IndustryPage />} />
           <Route path="/contractor-referrals" element={<ReferralPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/:citySlug" element={<CityPage />} />
