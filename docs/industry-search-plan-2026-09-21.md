@@ -69,3 +69,16 @@ Do not present FAQs as a guarantee of Google rich results. Do not describe city 
 GSC setup uses info@oktd.ca and current HTTPS URL-prefix property. Add verification tag permanently. Submit sitemap after final deployment and inspect the homepage, contractor referrals, industry directory and key equipment pages. Record actual accepted requests and any quota or CAPTCHA limits. Requesting indexing does not guarantee inclusion or ranking.
 
 GBP: repair-focused description submitted; existing service areas already cover Vernon, Coldstream, Armstrong, Enderby, Lumby, Lavington, Lake Country, Kelowna, North and Central Okanagan. Service descriptions updated for wiring repair, heating maintenance, water heater repair, and refrigeration service. Confirm final saved state. Primary category remains Electrician; owner should identify leading revenue/service mix before changing it. Existing languages, parking and ownership attributes remain unverified and should be reviewed with owner.
+
+## Completed publishing and Google setup
+
+- Production deployed from commit `47e157a` to https://aslanserviceslimited.ca; Vercel deployment `dpl_88fsj1223rFhdysfBPq7rFo9maCm`. Code is pushed on `codex/aslan-contact-and-content-fixes`; main was not merged.
+- Build and both Node test files passed. All nine new routes returned HTTP 200 with rendered content, one H1 and correct canonical metadata. Desktop/mobile checks passed without horizontal overflow or production hydration errors.
+- Search Console HTTPS URL-prefix property verified using `info@oktd.ca`. Keep the verification meta tag in the website.
+- Sitemap submitted successfully; Google reported 429 discovered URLs on September 21, 2026. Discovered does not mean indexed.
+- Homepage inspection reported already indexed. Priority crawl requests accepted for homepage, contractor referrals, industry directory, grocery/deli equipment repair, and commercial laundry repair (five accepted requests).
+- New property reporting is still processing; no search-volume or query-ranking claims can yet be made from this property's reports.
+- GBP repair/maintenance description and tracked website link verified saved. The description no longer displayed a pending notice in the business information panel.
+- Four existing GBP service descriptions updated: electrical wiring repair, heating maintenance, water heater repair, and refrigeration service.
+- Three equipment services added with descriptions: Commercial Washer & Dryer Repair, Bread & Meat Slicer Repair, and Dry-Cleaning Equipment Service. Services panel still reported pending review (up to one day). Reopened dry-cleaning service confirmed the description persisted.
+- Old `aslanservicesltd.com` certificate/redirect issue remains unresolved because registrar/DNS access was unavailable. Current `.ca` website is live over HTTPS.
