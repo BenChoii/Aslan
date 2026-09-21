@@ -114,7 +114,7 @@ export default function HomePage() {
         <div className="hero-content">
           <div>
             <div className="hero-badge fade-in"><FluentEmoji name="zap" size={16} /> Trusted Since 1983 — Serving the Okanagan</div>
-            <h1 className="hero-title fade-in fade-in-delay-1" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', fontWeight: 900, lineHeight: 1.05, letterSpacing: '-1px' }}>
+            <h1 className="hero-title fade-in fade-in-delay-1">
               Expert<br />
               <span className="accent">Trade Services</span><br />
               You Can Trust

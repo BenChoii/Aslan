@@ -21,6 +21,8 @@
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --max-width: 1280px;
   --header-height: 110px;
+  --section-space: clamp(64px, 6vw, 96px);
+  --section-heading-gap: clamp(32px, 4vw, 48px);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -142,9 +144,9 @@ img { max-width: 100%; height: auto; display: block; }
 /* ─── Hero ─── */
 .hero {
   min-height: 100vh; display: flex; align-items: center;
-  padding-top: var(--header-height); position: relative;
+  padding: calc(var(--header-height) + clamp(40px, 5vw, 72px)) 0 clamp(64px, 6vw, 96px); position: relative;
   background: linear-gradient(135deg, #FFFFFF 0%, #F4F6F8 50%, rgba(27,45,91,0.04) 100%);
-  overflow: hidden;
+  overflow: clip;
 }
 .hero::before {
   content: ''; position: absolute; top: -50%; right: -20%;
@@ -164,8 +166,8 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .hero-content {
   position: relative; z-index: 1; max-width: var(--max-width);
-  margin: 0 auto; padding: 0 24px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  width: 100%; margin: 0 auto; padding: 0 24px;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 4vw, 60px); align-items: center;
 }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
@@ -173,7 +175,7 @@ img { max-width: 100%; height: auto; display: block; }
   border: 1px solid rgba(27,45,91,0.2); border-radius: 50px;
   font-size: 0.85rem; color: var(--accent-dark); margin-bottom: 24px;
 }
-.hero-title { margin-bottom: 20px; }
+.hero-title { margin-bottom: 24px; font-size: clamp(2.5rem, 4.2vw, 4.25rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.035em; }
 .hero-title .accent { color: var(--accent); }
 .hero-subtitle {
   font-size: 1.15rem; color: var(--text-secondary);
@@ -219,9 +221,9 @@ img { max-width: 100%; height: auto; display: block; }
 .hero-card-desc { font-size: 0.82rem; color: var(--text-muted); }
 
 /* ─── Section ─── */
-.section { padding: 100px 0; }
+.section { padding: var(--section-space) 0; }
 .section-dark { background: var(--bg-secondary); }
-.section-header { text-align: center; margin-bottom: 60px; }
+.section-header { text-align: center; margin-bottom: var(--section-heading-gap); }
 .section-badge {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 6px 16px; background: rgba(27,45,91,0.08);
@@ -501,11 +503,15 @@ img { max-width: 100%; height: auto; display: block; }
 @media (max-width: 768px) {
   .header-nav { display: none; }
   .mobile-menu-btn { display: block; }
-  .hero-stats { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 32px; }
+  .hero-stat { padding: 18px 8px; }
+  .hero-stat-number { font-size: clamp(1.65rem, 6vw, 2.2rem); line-height: 1.2; }
+  .hero-stat-label { font-size: 0.75rem; line-height: 1.5; margin-top: 8px; }
+  .hero-actions .rotating-badge { display: none; }
   .services-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-  .section { padding: 60px 0; }
+  .hero { min-height: auto; }
   .about-features { grid-template-columns: 1fr; }
 }
 
@@ -582,7 +588,8 @@ img { max-width: 100%; height: auto; display: block; }
 .testimonial-card-v2 {
   background: #FFFFFF;
   border: 1px solid var(--border); border-radius: var(--radius-xl);
-  padding: 36px; position: relative; overflow: hidden;
+  padding: clamp(24px, 2.5vw, 32px); position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
   transition: var(--transition); box-shadow: var(--shadow);
 }
 .testimonial-card-v2:hover {
@@ -601,10 +608,10 @@ img { max-width: 100%; height: auto; display: block; }
   line-height: 1.8; margin-bottom: 24px; position: relative; z-index: 1;
 }
 .testimonial-card-v2 .testimonial-footer {
-  display: flex; align-items: center; gap: 12px;
+  display: flex; align-items: center; gap: 12px; margin-top: auto;
 }
 .testimonial-card-v2 .testimonial-avatar {
-  width: 44px; height: 44px; border-radius: 50%;
+  width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%;
   background: var(--accent); display: flex; align-items: center;
   justify-content: center; font-weight: 700; font-size: 1.1rem;
   color: #FFFFFF; font-family: 'Outfit', sans-serif;
