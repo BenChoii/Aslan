@@ -154,6 +154,33 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="section">
+        <div className="container">
+          <div className="section-header">
+            <div className="section-badge"><FluentEmoji name="star" size={14} /> Our Real Satisfaction</div>
+            <h2 className="section-title">Thousands of Satisfied Clients</h2>
+            <p className="section-subtitle">Real 5-star reviews from our Google Business Profile — because trust is earned, not advertised.</p>
+          </div>
+          <div className="testimonials-grid">
+            {testimonials.map((t, i) => (
+              <div key={i} className="testimonial-card-v2">
+                <span className="quote-mark">"</span>
+                <div className="testimonial-stars">★★★★★</div>
+                <p className="testimonial-text">"{t.text}"</p>
+                <div className="testimonial-footer">
+                  <div className="testimonial-avatar">{t.author.charAt(0)}</div>
+                  <div className="testimonial-meta">
+                    <div className="testimonial-author">{t.author}</div>
+                    <div className="testimonial-role">{t.role}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Scrolling Marquee */}
       <div className="marquee-section">
         <div className="marquee-track">
@@ -318,33 +345,6 @@ export default function HomePage() {
           </div>
           <div style={{ marginTop: '40px' }}>
             <GoogleMap embedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2571.5!2d-119.272!3d50.267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537dd0072a77a7a5%3A0x0!2s2210+11th+Ave%2C+Vernon%2C+BC+V1T+7X8!5e0!3m2!1sen!2sca!4v1710000000000" title="Aslan Services Ltd — 2210 11th Ave, Vernon, BC" />
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="section">
-        <div className="container">
-          <div className="section-header">
-            <div className="section-badge"><FluentEmoji name="star" size={14} /> Our Real Satisfaction</div>
-            <h2 className="section-title">Thousands of Satisfied Clients</h2>
-            <p className="section-subtitle">Real 5-star reviews from our Google Business Profile — because trust is earned, not advertised.</p>
-          </div>
-          <div className="testimonials-grid">
-            {testimonials.map((t, i) => (
-              <div key={i} className="testimonial-card-v2">
-                <span className="quote-mark">"</span>
-                <div className="testimonial-stars">★★★★★</div>
-                <p className="testimonial-text">"{t.text}"</p>
-                <div className="testimonial-footer">
-                  <div className="testimonial-avatar">{t.author.charAt(0)}</div>
-                  <div className="testimonial-meta">
-                    <div className="testimonial-author">{t.author}</div>
-                    <div className="testimonial-role">{t.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
