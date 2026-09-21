@@ -1,0 +1,1 @@
+Equipment brands confirmed by the client on September 21, 2026. Six manufacturer logos from the public brand strip at https://www.brown-mechanical.com/. Bryant: https://images.carriercms.com/image/upload/v1625768904/bryant/logos/bryant-heating-and-cooling-logo.svg

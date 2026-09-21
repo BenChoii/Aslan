@@ -777,3 +777,19 @@ img { max-width: 100%; height: auto; display: block; }
   .process-grid { grid-template-columns: 1fr; }
   .marquee-item { font-size: 0.95rem; padding: 0 20px; }
 }
+
+/* Equipment brands */
+.brands-section { padding: 64px 0; background: #fff; border-top: 1px solid #e5e7eb; scroll-margin-top: 120px; }
+.brands-section .section-header { margin-bottom: 28px; }
+.brands-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px 28px; padding: 0; margin: 0; list-style: none; }
+.brand-logo { display: flex; align-items: center; justify-content: center; flex: 0 1 130px; min-width: 0; height: 104px; }
+.brand-logo img { display: block; width: 100%; max-width: 150px; height: 90px; object-fit: contain; }
+.brands-contact { margin: 28px 0 0; text-align: center; color: var(--text-secondary); font-size: 0.95rem; }
+.brands-contact a { color: var(--accent); font-weight: 600; }
+@media (max-width: 600px) {
+  .brands-section { padding: 44px 0; }
+  .brands-grid { gap: 12px 24px; }
+  .brand-logo { flex-basis: 120px; height: 90px; }
+  .brand-logo img { height: 76px; }
+  .brands-contact a { display: block; margin-top: 6px; }
+}

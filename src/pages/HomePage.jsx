@@ -191,6 +191,27 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="brands-section" id="brands" aria-labelledby="brands-title">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title" id="brands-title">Brands We Install &amp; Service</h2>
+            <p className="section-subtitle">Familiar names in heating, cooling, hot water, and comfort controls. Local expertise to keep them working.</p>
+          </div>
+          <ul className="brands-grid" aria-label="Equipment brands">
+            {[
+              ['Bryant', 'bryant.svg'], ['A. O. Smith', 'ao-smith.png'],
+              ['Fujitsu', 'fujitsu.png'], ['Honeywell', 'honeywell.png'],
+              ['Payne', 'payne.png'], ['Raypak', 'raypak.png'], ['Rheem', 'rheem.png'],
+            ].map(([name, logo]) => (
+              <li className="brand-logo" key={name}>
+                <img src={`/brands/${logo}`} alt={name} width="160" height="90" loading="lazy" decoding="async" />
+              </li>
+            ))}
+          </ul>
+          <p className="brands-contact">Need help with your equipment? <Link to="/contact">Talk to our team about your make and model →</Link></p>
+        </div>
+      </section>
+
       {/* Expertise & About */}
       <section className="section section-dark">
         <div className="container">
