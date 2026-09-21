@@ -12,7 +12,7 @@ export default function ContactPage() {
             <Link to="/">Home</Link><span>/</span><span className="current">Contact Us</span>
           </div>
           <h1>Contact <span style={{ color: 'var(--accent)' }}>Aslan Services</span></h1>
-          <p className="page-hero-subtitle">Get in touch to discuss a quote, schedule a service call, or reach us 24/7 for emergencies at 250-549-4444.</p>
+          <p className="page-hero-subtitle">Call to arrange a repair, discuss maintenance, or refer a service call. Reach us 24/7 for emergencies at 250-549-4444.</p>
         </div>
       </section>
 
@@ -20,9 +20,10 @@ export default function ContactPage() {
         <div className="container">
           <div className="contact-grid">
             <div>
-              <h2 style={{ marginBottom: '24px' }}>Call to Discuss Your Project</h2>
-              <p style={{ marginBottom: '24px' }}>For quotes, scheduling, and service enquiries, call our team at 250-549-4444. For urgent problems, use our 24/7 emergency line.</p>
+              <h2 style={{ marginBottom: '24px' }}>Call to Book a Repair</h2>
+              <p style={{ marginBottom: '24px' }}>For repairs, maintenance, scheduling, and contractor referrals, call our team at 250-549-4444. For urgent problems, use our 24/7 emergency line.</p>
               <a href="tel:2505494444" className="btn btn-primary">Call 250-549-4444</a>
+              <div className="contact-referral"><h3>Referring a Customer?</h3><p>Tell us your company name, the service location, equipment type, and what needs attention. We’ll discuss availability and agree on how to arrange contact with the customer.</p><Link to="/contractor-referrals">Contractor referral information →</Link></div>
               <h3 style={{ marginTop: '32px', marginBottom: '16px' }}>Before You Book</h3>
               <p>Have your service address and a description of the problem ready. Ask about availability, assessment fees, minimum charges, travel, and after-hours rates so you know what to expect.</p>
 

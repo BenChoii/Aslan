@@ -800,3 +800,16 @@ img { max-width: 100%; height: auto; display: block; }
   .brand-logo img { height: 76px; }
   .brands-contact a { display: block; margin-top: 6px; }
 }
+
+/* Repair and contractor referral paths */
+.hero-referral-link { flex-basis: 100%; margin-top: 4px; font-weight: 600; }
+.referral-panel { display: grid; grid-template-columns: 1.25fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: center; }
+.referral-panel p, .referral-action p { margin-top: 20px; color: var(--text-secondary); }
+.referral-action { padding: clamp(24px, 3vw, 40px); border: 1px solid var(--border); border-radius: var(--radius-lg); background: white; }
+.referral-action .btn { margin-top: 24px; }
+.referral-note { font-size: .9rem; }
+.referral-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.contact-referral { margin-top: 32px; padding: 24px; background: var(--bg-secondary); border-radius: var(--radius); }
+.contact-referral p { margin: 12px 0; }
+.page-hero .btn { margin-top: 28px; }
+@media (max-width: 968px) { .referral-panel, .referral-steps { grid-template-columns: 1fr; } }

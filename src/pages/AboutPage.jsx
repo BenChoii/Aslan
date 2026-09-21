@@ -17,7 +17,7 @@ export default function AboutPage() {
             <Link to="/">Home</Link><span>/</span><span className="current">About Us</span>
           </div>
           <h1>About <span style={{ color: 'var(--accent)' }}>Aslan Services</span> Ltd.</h1>
-          <p className="page-hero-subtitle">Trusted since 1983 for electrical, plumbing, gas fitting, refrigeration, and sheet metal services in Vernon, BC and the Okanagan region.</p>
+          <p className="page-hero-subtitle">Repair and maintenance specialists serving Vernon and the Okanagan since 1983.</p>
         </div>
       </section>
 
@@ -27,7 +27,7 @@ export default function AboutPage() {
             <div className="about-content">
               <h2>Our Story</h2>
               <p>Since 1983, ASLAN Electrical, Plumbing, Gas Fitting, Refrigeration & Sheet Metal Services Ltd. has provided top-of-the-line service and customer care for our residential, commercial, and industrial clients in Vernon BC and beyond.</p>
-              <p>Our commitment to quality is demonstrated by our use of Bryant products, known throughout the industry for their quality. From electrical work and plumbing services to 24-hour emergency response, we have you covered.</p>
+              <p>Our specialty is keeping existing systems working. We focus on repairs, troubleshooting, and maintenance, and take referrals from larger contractors whose teams are busy with installations.</p>
               <p>To ensure you're dealing with a reputable company, we realize the value of being bonded, licensed and insured. We are confident that our fair prices and superior workmanship will win your loyalty.</p>
               <h2 style={{ marginTop: '40px' }}>Our Certifications</h2>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '16px', marginTop: '16px' }}>

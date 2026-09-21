@@ -44,7 +44,7 @@ export default function Header() {
               </div>
             </div>
 
-            <Link to="/gallery" className={isActive('/gallery')}>Our Work</Link>
+            <Link to="/contractor-referrals" className={isActive('/contractor-referrals')}>Referrals</Link>
             <Link to="/contact" className={isActive('/contact')}>Contact</Link>
           </nav>
 
@@ -62,6 +62,7 @@ export default function Header() {
       <div className={`mobile-nav ${mobileOpen ? 'open' : ''}`}>
         <Link to="/" onClick={() => setMobileOpen(false)}>Home</Link>
         <Link to="/about" onClick={() => setMobileOpen(false)}>About</Link>
+        <Link to="/contractor-referrals" onClick={() => setMobileOpen(false)}>Contractor Referrals</Link>
         <div style={{ padding: '14px 0', color: 'var(--accent-dark)', fontWeight: 700, borderBottom: '1px solid rgba(0,0,0,0.06)' }}>Services</div>
         {services.map(s => (
           <Link key={s.slug} to={`/vernon/${s.slug}`} onClick={() => setMobileOpen(false)} style={{ paddingLeft: '20px', fontSize: '0.95rem' }}>{s.name}</Link>

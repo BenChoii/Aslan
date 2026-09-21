@@ -11,7 +11,7 @@ export default function Footer() {
             <Link to="/" className="header-logo" style={{ marginBottom: '8px' }}>
               <img src="/logo.png" alt="Aslan Services Ltd" style={{ height: '50px' }} />
             </Link>
-            <p>Since 1983, Aslan Services Ltd has provided top-of-the-line electrical, plumbing, gas fitting, refrigeration, and sheet metal services for residential, commercial, and industrial clients in Vernon, BC and the greater Okanagan region.</p>
+            <p>Since 1983, Aslan Services Ltd has served the Okanagan with electrical, plumbing, heating, and refrigeration expertise. Our focus is repairs and maintenance for homes and businesses, including service calls referred by other contractors.</p>
             <div style={{ marginTop: '20px' }}>
               <a href="tel:2505494444" className="btn btn-primary" style={{ marginBottom: '8px' }}>📞 250-549-4444</a>
             </div>
@@ -19,6 +19,7 @@ export default function Footer() {
 
           <div>
             <h4 className="footer-title">Services</h4>
+            <Link to="/contractor-referrals">Contractor Referrals →</Link>
             <ul className="footer-links">
               {serviceCategories.map(cat => (
                 <li key={cat}><Link to={`/vernon/${services.find(s => s.category === cat).slug}`}>{cat}</Link></li>

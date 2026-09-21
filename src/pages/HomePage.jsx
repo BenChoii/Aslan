@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { cities } from '../data/cities'
-import { services, serviceCategories } from '../data/services'
-import { galleryPhotos } from '../data/gallery'
+import { services } from '../data/services'
 import FAQ from '../components/FAQ'
 import GoogleMap from '../components/GoogleMap'
 import FluentEmoji from '../components/FluentEmoji'
@@ -44,16 +43,16 @@ const SERVICE_ICONS = {
 const marqueeServices = [
   'Licensed Electricians', 'Emergency Plumbing', 'Gas Fitting & Repair',
   'Commercial Refrigeration', 'Sheet Metal Fabrication', 'Heating Systems',
-  'Water Heater Installation', 'Sewer Camera Inspection', 'Line Locating',
+  'Water Heater Repair', 'Sewer Camera Inspection', 'Line Locating',
   '24/7 Emergency Response', 'Residential & Commercial', 'Serving Since 1983',
 ];
 
 const heroServices = [
-  { icon: 'zap', title: 'Electrical', desc: 'Licensed electrical services' },
-  { icon: 'wrench', title: 'Plumbing', desc: 'Residential & commercial' },
+  { icon: 'zap', title: 'Electrical', desc: 'Troubleshooting & repairs' },
+  { icon: 'wrench', title: 'Plumbing', desc: 'Leaks, blockages & repairs' },
   { icon: 'fire', title: 'Gas Fitting', desc: 'Safe, certified gas work' },
-  { icon: 'snowflake', title: 'Refrigeration', desc: 'Commercial cooling systems' },
-  { icon: 'nut', title: 'Sheet Metal', desc: 'Custom fabrication & HVAC' },
+  { icon: 'snowflake', title: 'Refrigeration', desc: 'Commercial repair & maintenance' },
+  { icon: 'nut', title: 'Sheet Metal', desc: 'Ductwork & ventilation service' },
   { icon: 'thermometer', title: 'Heating', desc: '24/7 emergency repair' },
 ];
 
@@ -70,41 +69,25 @@ const expertiseAreas = [
   { label: 'Electrical Services' },
   { label: 'Plumbing & Water' },
   { label: 'Gas Fitting & HVAC' },
-  { label: 'Commercial Projects' },
+  { label: 'Commercial Maintenance' },
 ];
 
 const processSteps = [
-  { num: '01', title: 'Call Our Team', desc: 'Call to describe your project. For emergencies, phone our 24/7 line.' },
+  { num: '01', title: 'Call Our Team', desc: 'Tell us what is wrong and where service is needed. For emergencies, phone our 24/7 line.' },
   { num: '02', title: 'Discuss Scope & Charges', desc: 'Ask about assessment fees, minimum charges, travel and after-hours rates before booking.' },
   { num: '03', title: 'Expert Service', desc: 'Our licensed technicians complete the work to code with quality materials.' },
-  { num: '04', title: 'Your Satisfaction', desc: 'We stand behind every job with professional guarantees and follow-up support.' },
+  { num: '04', title: 'Your Satisfaction', desc: 'Discuss the completed work and any recommended maintenance with our team.' },
 ];
 
 const homeFaqs = [
+  { q: 'Can another contractor refer repair or maintenance work to Aslan?', a: 'Yes. We welcome service referrals from contractors and installation companies. Call 250-549-4444 to discuss the problem, location, availability, and how to arrange the handoff.' },
+  { q: 'What does Aslan specialize in?', a: 'Repairs and maintenance for existing electrical, plumbing, heating, and refrigeration systems. Our focus is service work for homes and businesses, including referrals from other contractors.' },
   { q: 'What areas does Aslan Services cover?', a: 'We serve Vernon, Coldstream, Armstrong, Enderby, Lumby, Cherryville, Lake Country, Salmon Arm, Kelowna, West Kelowna, Peachland, Summerland, Penticton, Revelstoke, Kamloops, and Spallumcheen — the entire Okanagan and beyond.' },
   { q: 'Do you offer 24-hour emergency service?', a: 'Yes! Call 250-549-4444 anytime for plumbing, electrical, heating, and gas emergencies. We respond day or night, weekends and holidays.' },
   { q: 'Are you licensed and insured?', a: 'Absolutely. We hold Gas CL #LGA0002702, Electrical CL #LEL0011310, and Boiler Class Reference #LBP0046269. We are fully bonded, licensed, and insured.' },
   { q: 'How long has Aslan Services been in business?', a: 'Aslan Services has served the Okanagan since 1983.' },
   { q: 'Do you offer free estimates?', a: 'Call 250-549-4444 to discuss your project and confirm whether an estimate or service visit has a charge. Ask about minimum charges, travel and after-hours rates before booking.' },
 ];
-
-function RotatingBadge() {
-  return (
-    <div className="rotating-badge">
-      <div className="rotating-badge-text">
-        <svg viewBox="0 0 120 120">
-          <defs>
-            <path id="circle" d="M 60,60 m -45,0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0" />
-          </defs>
-          <text>
-            <textPath href="#circle">• SINCE 1983 • LICENSED • BONDED • INSURED </textPath>
-          </text>
-        </svg>
-      </div>
-      <div className="rotating-badge-icon">→</div>
-    </div>
-  );
-}
 
 export default function HomePage() {
   return (
@@ -115,17 +98,17 @@ export default function HomePage() {
           <div>
             <div className="hero-badge fade-in"><FluentEmoji name="zap" size={16} /> Trusted Since 1983 — Serving the Okanagan</div>
             <h1 className="hero-title fade-in fade-in-delay-1">
-              Expert<br />
-              <span className="accent">Trade Services</span><br />
-              You Can Trust
+              Repairs &amp;<br />
+              <span className="accent">Maintenance.</span><br />
+              It’s What We Do.
             </h1>
             <p className="hero-subtitle fade-in fade-in-delay-2">
-              From emergency repairs to full-scale installations, Aslan Services delivers top-of-the-line electrical, plumbing, gas fitting, refrigeration & sheet metal services across the Okanagan.
+              Electrical, plumbing, heating, and refrigeration repairs for homes and businesses in Vernon and the Okanagan. We also handle service calls referred by contractors focused on installations.
             </p>
             <div className="hero-actions fade-in fade-in-delay-3">
-              <a href="tel:2505494444" className="btn btn-primary" style={{ padding: '16px 36px', fontSize: '1.05rem' }}>Call for a Quote</a>
+              <a href="tel:2505494444" className="btn btn-primary" style={{ padding: '16px 36px', fontSize: '1.05rem' }}>Book a Repair</a>
               <a href="tel:2505494444" className="btn btn-outline" style={{ padding: '16px 36px', fontSize: '1.05rem' }}><FluentEmoji name="phone" size={18} /> 24/7 Emergency</a>
-              <RotatingBadge />
+              <Link to="/contractor-referrals" className="hero-referral-link">For contractors: refer a service call →</Link>
             </div>
             <div className="hero-stats fade-in fade-in-delay-3">
               <div className="hero-stat">
@@ -158,9 +141,9 @@ export default function HomePage() {
       <section className="section">
         <div className="container">
           <div className="section-header">
-            <div className="section-badge"><FluentEmoji name="star" size={14} /> Our Real Satisfaction</div>
-            <h2 className="section-title">Thousands of Satisfied Clients</h2>
-            <p className="section-subtitle">Real 5-star reviews from our Google Business Profile — because trust is earned, not advertised.</p>
+            <div className="section-badge"><FluentEmoji name="star" size={14} /> Customer Reviews</div>
+            <h2 className="section-title">Trusted for Repairs & Ongoing Service</h2>
+            <p className="section-subtitle">Selected Google reviews from customers who turn to Aslan for repairs and regular service.</p>
           </div>
           <div className="testimonials-grid">
             {testimonials.map((t, i) => (
@@ -181,6 +164,21 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section section-dark" aria-labelledby="referrals-heading">
+        <div className="container referral-panel">
+          <div>
+            <div className="section-badge">For Contractors &amp; Installation Teams</div>
+            <h2 id="referrals-heading">Focused on installs?<br />Send your service calls our way.</h2>
+            <p>When your team is busy with installations, repair and maintenance requests still need attention. Aslan specializes in that work and welcomes referrals from other trade companies.</p>
+          </div>
+          <div className="referral-action">
+            <h3>A clear place to send service enquiries</h3>
+            <p>Call to discuss the fault, location, and urgency. We’ll confirm whether we can take on the work and agree on the next step.</p>
+            <Link to="/contractor-referrals" className="btn btn-primary">Refer a Service Call →</Link>
+          </div>
+        </div>
+      </section>
+
       {/* Scrolling Marquee */}
       <div className="marquee-section">
         <div className="marquee-track">
@@ -197,11 +195,11 @@ export default function HomePage() {
         <div className="container">
           <div className="section-header">
             <div className="section-badge"><FluentEmoji name="spark" size={14} /> What We Offer</div>
-            <h2 className="section-title">Complete Trade Services Under One Roof</h2>
-            <p className="section-subtitle">From electrical and plumbing to gas fitting, refrigeration, and sheet metal — we handle it all with experience built since 1983.</p>
+            <h2 className="section-title">Repair & Maintenance Services</h2>
+            <p className="section-subtitle">Help with faults, breakdowns, and ongoing upkeep — backed by trade experience since 1983.</p>
           </div>
           <div className="services-grid">
-            {services.map(s => {
+            {['gas-furnace-repair', 'heating-repair', 'water-heater-repair', 'wiring-repair', 'residential-plumber', 'commercial-plumber', 'refrigeration', 'restaurant-equipment-repair', 'bakery-equipment-repair'].map(slug => services.find(s => s.slug === slug)).map(s => {
               const IconComp = SERVICE_ICONS[s.slug];
               return (
                 <Link key={s.slug} to={`/vernon/${s.slug}`} className="service-card">
@@ -221,7 +219,7 @@ export default function HomePage() {
       <section className="brands-section" id="brands" aria-labelledby="brands-title">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title" id="brands-title">Brands We Install &amp; Service</h2>
+            <h2 className="section-title" id="brands-title">Equipment Brands We Service</h2>
             <p className="section-subtitle">Familiar names in heating, cooling, hot water, and comfort controls. Local expertise to keep them working.</p>
           </div>
           <ul className="brands-grid" aria-label="Equipment brands">
@@ -247,7 +245,7 @@ export default function HomePage() {
               <div className="section-badge" style={{ marginBottom: '16px' }}><FluentEmoji name="trophy" size={14} /> For Commercial & Residential Clients</div>
               <h2 style={{ marginBottom: '20px' }}>Trusted Local Experts — <span style={{ color: 'var(--accent)' }}>Fast, Reliable</span></h2>
               <p style={{ color: 'var(--text-secondary)', marginBottom: '32px', lineHeight: 1.8 }}>
-                Aslan is your trusted partner for all residential and commercial trade needs. With years of hands-on experience, a skilled team, and unwavering commitment to quality, we deliver results you can count on.
+                Repairs and maintenance are our focus. Homeowners, businesses, and referring contractors call Aslan when existing systems need attention — from plumbing and electrical faults to heating and commercial refrigeration service.
               </p>
               {expertiseAreas.map((e, i) => (
                 <div key={i} className="expertise-bar-group">
@@ -288,7 +286,7 @@ export default function HomePage() {
           <div className="section-header">
             <div className="section-badge"><FluentEmoji name="gear" size={14} /> How It Works</div>
             <h2 className="section-title">Simple Process, Expert Results</h2>
-            <p className="section-subtitle">From first call to project completion — here's how we deliver exceptional service every time.</p>
+            <p className="section-subtitle">From your first call to the completed repair — here's how we deliver exceptional service every time.</p>
           </div>
           <div className="process-grid">
             {processSteps.map((s, i) => (
@@ -298,31 +296,6 @@ export default function HomePage() {
                 <div className="process-step-desc">{s.desc}</div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Work */}
-      <section className="section section-dark">
-        <div className="container">
-          <div className="section-header">
-            <div className="section-badge"><FluentEmoji name="spark" size={14} /> Our Work</div>
-            <h2 className="section-title">Recent Projects</h2>
-            <p className="section-subtitle">A few snapshots from the field — real jobs across the Okanagan, completed by the Aslan team.</p>
-          </div>
-          <div className="gallery-grid gallery-grid-home">
-            {galleryPhotos.slice(0, 6).map(p => (
-              <Link key={p.src} to="/gallery" className="gallery-tile" aria-label={`View ${p.title}`}>
-                <img src={p.src} alt={p.alt} loading="lazy" />
-                <div className="gallery-tile-overlay">
-                  <div className="gallery-tile-category">{p.category}</div>
-                  <div className="gallery-tile-title">{p.title}</div>
-                </div>
-              </Link>
-            ))}
-          </div>
-          <div style={{ textAlign: 'center', marginTop: '40px' }}>
-            <Link to="/gallery" className="btn btn-outline">View Full Gallery →</Link>
           </div>
         </div>
       </section>
@@ -365,11 +338,11 @@ export default function HomePage() {
         <div className="container">
           <h2 style={{ marginBottom: '16px', fontSize: 'clamp(2rem, 4vw, 3rem)' }}>Ready to Get Started?</h2>
           <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto 32px', fontSize: '1.1rem' }}>
-            Whether it's an emergency or a planned project, our team is here for you. Call now or discuss your project.
+            Need a repair, routine maintenance, or help with a referred service call? Talk to our team about the problem and availability.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="tel:2505494444" className="btn btn-primary" style={{ padding: '18px 40px', fontSize: '1.1rem' }}><FluentEmoji name="phone" size={20} /> Call 250-549-4444</a>
-            <a href="tel:2505494444" className="btn btn-outline" style={{ padding: '18px 40px', fontSize: '1.1rem' }}>Call for a Quote</a>
+            <a href="tel:2505494444" className="btn btn-outline" style={{ padding: '18px 40px', fontSize: '1.1rem' }}>Book a Repair</a>
           </div>
         </div>
       </section>

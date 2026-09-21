@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import PageMetadata from './components/PageMetadata'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
@@ -7,6 +8,7 @@ import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import CityPage from './pages/CityPage'
 import ServicePage from './pages/ServicePage'
+import ReferralPage from './pages/ReferralPage'
 import GalleryPage from './pages/GalleryPage'
 
 function ScrollToTop() {
@@ -19,12 +21,14 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
+      <PageMetadata />
       <Header />
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/contractor-referrals" element={<ReferralPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/:citySlug" element={<CityPage />} />
           <Route path="/:citySlug/:serviceSlug" element={<ServicePage />} />
