@@ -10,7 +10,7 @@ export default function CTA({ cityName }) {
         📞 Call Now
       </a>
       <a href="tel:2505494444" className="btn btn-outline" style={{ width: '100%', justifyContent: 'center' }}>
-        ✉️ Request a Quote
+        📞 Call for a Quote
       </a>
       <div style={{ marginTop: '24px', padding: '16px', background: 'rgba(27,45,91,0.04)', borderRadius: '12px', border: '1px solid var(--border)' }}>
         <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginBottom: '8px' }}>Office Hours</div>

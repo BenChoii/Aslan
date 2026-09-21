@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import FAQ from '../components/FAQ'
 
 const aboutFaqs = [
-  { q: 'How long has Aslan Services been in business?', a: 'Since 1983 — over 44 years providing top-of-the-line electrical, plumbing, gas fitting, refrigeration, and sheet metal services in Vernon, BC and the greater Okanagan.' },
+  { q: 'How long has Aslan Services been in business?', a: 'Since 1983 — decades providing top-of-the-line electrical, plumbing, gas fitting, refrigeration, and sheet metal services in Vernon, BC and the greater Okanagan.' },
   { q: 'What licences do you hold?', a: 'Gas CL #LGA0002702, Electrical CL #LEL0011310, and Boiler Class Reference #LBP0046269. We are fully bonded, licensed, and insured.' },
   { q: 'Do you use quality products?', a: 'Yes. We are proud to use Bryant products, known throughout the industry for their quality and reliability.' },
   { q: 'Do you offer corporate or membership rates?', a: 'Yes, we offer corporate and membership rates for businesses requiring ongoing service.' },
@@ -17,7 +17,7 @@ export default function AboutPage() {
             <Link to="/">Home</Link><span>/</span><span className="current">About Us</span>
           </div>
           <h1>About <span style={{ color: 'var(--accent)' }}>Aslan Services</span> Ltd.</h1>
-          <p className="page-hero-subtitle">Over 44 years of trusted electrical, plumbing, gas fitting, refrigeration, and sheet metal services in Vernon, BC and the Okanagan region.</p>
+          <p className="page-hero-subtitle">Trusted since 1983 for electrical, plumbing, gas fitting, refrigeration, and sheet metal services in Vernon, BC and the Okanagan region.</p>
         </div>
       </section>
 
@@ -57,7 +57,7 @@ export default function AboutPage() {
                 <div className="about-stat-label">Founded</div>
               </div>
               <div className="about-stat-card">
-                <div className="about-stat-number" style={{ color: 'var(--accent)' }}>44+</div>
+                <div className="about-stat-number" style={{ color: 'var(--accent)' }}>40+</div>
                 <div className="about-stat-label">Years Experience</div>
               </div>
               <div className="about-stat-card accent-card">
@@ -81,10 +81,10 @@ export default function AboutPage() {
       <section className="section" style={{ textAlign: 'center' }}>
         <div className="container">
           <h2 style={{ marginBottom: '16px' }}>Ready to Work With Us?</h2>
-          <p style={{ color: 'var(--text-secondary)', maxWidth: '500px', margin: '0 auto 32px' }}>Contact us today for a free quote or call anytime for emergency service.</p>
+          <p style={{ color: 'var(--text-secondary)', maxWidth: '500px', margin: '0 auto 32px' }}>Call to discuss your project, estimate options, and applicable service charges. For emergencies, call anytime.</p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="tel:2505494444" className="btn btn-primary">📞 250-549-4444</a>
-            <a href="tel:2505494444" className="btn btn-outline">Request a Quote</a>
+            <a href="tel:2505494444" className="btn btn-outline">Call for a Quote</a>
           </div>
         </div>
       </section>

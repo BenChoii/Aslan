@@ -11,8 +11,8 @@ export default function CityPage() {
   if (!city) return <Navigate to="/" replace />;
 
   const cityFaqs = [
-    { q: `What services does Aslan offer in ${city.name}?`, a: `We provide all 25 of our trade services in ${city.name}, including plumbing, electrical, gas fitting, refrigeration, sheet metal, heating repair, water heaters, sewer camera inspection, line locating, and more. Call 250-549-4444 for any project.` },
-    { q: `Do you charge extra for service calls to ${city.name}?`, a: `We serve ${city.name} as part of our regular service area. Contact us for a free quote — our pricing is competitive and transparent.` },
+    { q: `What services does Aslan offer in ${city.name}?`, a: `We provide our trade services in ${city.name}, including plumbing, electrical, gas fitting, refrigeration, sheet metal, heating repair, water heaters, sewer camera inspection, line locating, and more. Call 250-549-4444 for any project.` },
+    { q: `Do you charge extra for service calls to ${city.name}?`, a: `Call 250-549-4444 with your address in ${city.name} to confirm availability, travel fees, minimum charges and any after-hours rates before booking.` },
     { q: `How fast can you respond to emergencies in ${city.name}?`, a: `We provide 24-hour emergency response across the Okanagan. Response times to ${city.name} depend on current demand, but we prioritize emergencies and dispatch as quickly as possible.` },
     { q: `Are you licensed to work in ${city.name}?`, a: `Yes. Our licences (Gas CL #LGA0002702, Electrical CL #LEL0011310, Boiler #LBP0046269) cover all of British Columbia. We are fully bonded and insured.` },
     { q: `What makes ${city.name} properties unique for trade services?`, a: city.climate },

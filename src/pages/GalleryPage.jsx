@@ -70,11 +70,11 @@ export default function GalleryPage() {
         <div className="container">
           <h2 style={{ marginBottom: '16px' }}>Want Work Like This for Your Property?</h2>
           <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto 32px', fontSize: '1.05rem' }}>
-            Whether it's a furnace replacement, an electrical upgrade, or a full commercial buildout, our team brings 44+ years of Okanagan experience to every job.
+            Whether it's a furnace replacement, an electrical upgrade, or a full commercial buildout, our team brings decades of Okanagan experience to every job.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="tel:2505494444" className="btn btn-primary"><FluentEmoji name="phone" size={18} /> Call 250-549-4444</a>
-            <Link to="/contact" className="btn btn-outline">Request a Quote</Link>
+            <Link to="/contact" className="btn btn-outline">Call for a Quote</Link>
           </div>
         </div>
       </section>

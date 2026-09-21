@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { services } from '../data/services'
 import GoogleMap from '../components/GoogleMap'
 import { cities } from '../data/cities'
 
@@ -13,7 +12,7 @@ export default function ContactPage() {
             <Link to="/">Home</Link><span>/</span><span className="current">Contact Us</span>
           </div>
           <h1>Contact <span style={{ color: 'var(--accent)' }}>Aslan Services</span></h1>
-          <p className="page-hero-subtitle">Get in touch for a free quote, schedule a service call, or reach us 24/7 for emergencies at 250-549-4444.</p>
+          <p className="page-hero-subtitle">Get in touch to discuss a quote, schedule a service call, or reach us 24/7 for emergencies at 250-549-4444.</p>
         </div>
       </section>
 
@@ -21,35 +20,12 @@ export default function ContactPage() {
         <div className="container">
           <div className="contact-grid">
             <div>
-              <h2 style={{ marginBottom: '24px' }}>Send Us a Message</h2>
-              <form onSubmit={e => { e.preventDefault(); alert('Thank you! We will get back to you shortly.'); }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-                  <div className="form-group">
-                    <label className="form-label" htmlFor="name">Full Name *</label>
-                    <input className="form-input" id="name" type="text" required placeholder="Your name" />
-                  </div>
-                  <div className="form-group">
-                    <label className="form-label" htmlFor="phone">Phone Number *</label>
-                    <input className="form-input" id="phone" type="tel" required placeholder="250-000-0000" />
-                  </div>
-                </div>
-                <div className="form-group">
-                  <label className="form-label" htmlFor="email">Email Address</label>
-                  <input className="form-input" id="email" type="email" placeholder="your@email.com" />
-                </div>
-                <div className="form-group">
-                  <label className="form-label" htmlFor="service">Service Needed</label>
-                  <select className="form-select" id="service">
-                    <option value="">Select a service...</option>
-                    {services.map(s => <option key={s.slug} value={s.slug}>{s.name}</option>)}
-                  </select>
-                </div>
-                <div className="form-group">
-                  <label className="form-label" htmlFor="message">Message *</label>
-                  <textarea className="form-textarea" id="message" required placeholder="Describe your project or issue..." />
-                </div>
-                <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>Send Message</button>
-              </form>
+              <h2 style={{ marginBottom: '24px' }}>Call to Discuss Your Project</h2>
+              <p style={{ marginBottom: '24px' }}>For quotes, scheduling, and service enquiries, call our team at 250-549-4444. For urgent problems, use our 24/7 emergency line.</p>
+              <a href="tel:2505494444" className="btn btn-primary">Call 250-549-4444</a>
+              <h3 style={{ marginTop: '32px', marginBottom: '16px' }}>Before You Book</h3>
+              <p>Have your service address and a description of the problem ready. Ask about availability, assessment fees, minimum charges, travel, and after-hours rates so you know what to expect.</p>
+
             </div>
 
             <div>

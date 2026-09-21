@@ -20,7 +20,7 @@ export default function ServicePage() {
   }));
   cityServiceFaqs.push(
     { q: `Why choose Aslan for ${service.name.toLowerCase()} in ${city.name}?`, a: `Aslan Services has been serving ${city.name} and the Okanagan since 1983. We are fully licensed, bonded, and insured with 24-hour emergency response. Our experienced team delivers code-compliant work with fair, transparent pricing.` },
-    { q: `Do you offer free quotes for ${service.name.toLowerCase()} in ${city.name}?`, a: `Yes! Contact us for a free, no-obligation quote for any ${service.name.toLowerCase()} project in ${city.name}. Call 250-549-4444 or fill out our online form.` }
+    { q: `Do you offer free quotes for ${service.name.toLowerCase()} in ${city.name}?`, a: `Call 250-549-4444 to discuss your ${service.name.toLowerCase()} project in ${city.name}. Confirm estimate fees, minimum charges, travel and after-hours rates before booking.` }
   );
 
   return (
@@ -52,10 +52,10 @@ export default function ServicePage() {
               <h2>Why Choose Aslan for {service.name} in {city.name}?</h2>
               <p>When you need reliable {service.name.toLowerCase()} in {city.name}, Aslan Services delivers. Here's what sets us apart:</p>
               <ul className="tips-list">
-                <li><strong>44+ Years of Experience</strong> — Serving the Okanagan since 1983 with proven expertise.</li>
+                <li><strong>Serving Since 1983</strong> — Serving the Okanagan since 1983 with proven expertise.</li>
                 <li><strong>Licensed & Insured</strong> — Fully bonded, licensed, and insured for complete peace of mind.</li>
                 <li><strong>24/7 Emergency Response</strong> — Day or night, weekends and holidays — we're there when you need us.</li>
-                <li><strong>Fair, Transparent Pricing</strong> — Free quotes and no hidden fees on every project.</li>
+                <li><strong>Discuss Charges Before Booking</strong> — Ask about estimates, minimum charges, travel and after-hours rates.</li>
                 <li><strong>Bryant Authorized</strong> — We use top-quality Bryant products for reliable, long-lasting results.</li>
                 <li><strong>Local Knowledge</strong> — We understand {city.name}'s unique climate and building requirements.</li>
               </ul>
@@ -135,11 +135,11 @@ export default function ServicePage() {
         <div className="container">
           <h2 style={{ marginBottom: '16px' }}>Need {service.name} in {city.name}?</h2>
           <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto 32px', fontSize: '1.1rem' }}>
-            Get a free quote or call us 24/7 for emergency service. Licensed, bonded, and insured since 1983.
+            Discuss your project or call us 24/7 for emergency service. Licensed, bonded, and insured since 1983.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="tel:2505494444" className="btn btn-emergency">🚨 Call 250-549-4444</a>
-            <a href="tel:2505494444" className="btn btn-outline">Request a Quote</a>
+            <a href="tel:2505494444" className="btn btn-outline">Call for a Quote</a>
           </div>
         </div>
       </section>

@@ -67,15 +67,15 @@ const testimonials = [
 ];
 
 const expertiseAreas = [
-  { label: 'Electrical Services', value: 98 },
-  { label: 'Plumbing & Water', value: 96 },
-  { label: 'Gas Fitting & HVAC', value: 95 },
-  { label: 'Commercial Projects', value: 90 },
+  { label: 'Electrical Services' },
+  { label: 'Plumbing & Water' },
+  { label: 'Gas Fitting & HVAC' },
+  { label: 'Commercial Projects' },
 ];
 
 const processSteps = [
-  { num: '01', title: 'Call or Request', desc: 'Reach us 24/7 by phone or online. Describe your project or emergency.' },
-  { num: '02', title: 'Free Assessment', desc: 'We assess the situation and provide a clear, fair quote — no hidden fees.' },
+  { num: '01', title: 'Call Our Team', desc: 'Call to describe your project. For emergencies, phone our 24/7 line.' },
+  { num: '02', title: 'Discuss Scope & Charges', desc: 'Ask about assessment fees, minimum charges, travel and after-hours rates before booking.' },
   { num: '03', title: 'Expert Service', desc: 'Our licensed technicians complete the work to code with quality materials.' },
   { num: '04', title: 'Your Satisfaction', desc: 'We stand behind every job with professional guarantees and follow-up support.' },
 ];
@@ -84,8 +84,8 @@ const homeFaqs = [
   { q: 'What areas does Aslan Services cover?', a: 'We serve Vernon, Coldstream, Armstrong, Enderby, Lumby, Cherryville, Lake Country, Salmon Arm, Kelowna, West Kelowna, Peachland, Summerland, Penticton, Revelstoke, Kamloops, and Spallumcheen — the entire Okanagan and beyond.' },
   { q: 'Do you offer 24-hour emergency service?', a: 'Yes! Call 250-549-4444 anytime for plumbing, electrical, heating, and gas emergencies. We respond day or night, weekends and holidays.' },
   { q: 'Are you licensed and insured?', a: 'Absolutely. We hold Gas CL #LGA0002702, Electrical CL #LEL0011310, and Boiler Class Reference #LBP0046269. We are fully bonded, licensed, and insured.' },
-  { q: 'How long has Aslan Services been in business?', a: 'Since 1983 — over 44 years of trusted service in the Okanagan region.' },
-  { q: 'Do you offer free estimates?', a: 'Yes, we provide free quotes for most projects. Call us or fill out our contact form to get started.' },
+  { q: 'How long has Aslan Services been in business?', a: 'Aslan Services has served the Okanagan since 1983.' },
+  { q: 'Do you offer free estimates?', a: 'Call 250-549-4444 to discuss your project and confirm whether an estimate or service visit has a charge. Ask about minimum charges, travel and after-hours rates before booking.' },
 ];
 
 function RotatingBadge() {
@@ -113,7 +113,7 @@ export default function HomePage() {
       <section className="hero">
         <div className="hero-content">
           <div>
-            <div className="hero-badge fade-in"><FluentEmoji name="zap" size={16} /> Trusted Since 1983 — Over 44 Years of Service</div>
+            <div className="hero-badge fade-in"><FluentEmoji name="zap" size={16} /> Trusted Since 1983 — Serving the Okanagan</div>
             <h1 className="hero-title fade-in fade-in-delay-1" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', fontWeight: 900, lineHeight: 1.05, letterSpacing: '-1px' }}>
               Expert<br />
               <span className="accent">Trade Services</span><br />
@@ -123,13 +123,13 @@ export default function HomePage() {
               From emergency repairs to full-scale installations, Aslan Services delivers top-of-the-line electrical, plumbing, gas fitting, refrigeration & sheet metal services across the Okanagan.
             </p>
             <div className="hero-actions fade-in fade-in-delay-3">
-              <a href="tel:2505494444" className="btn btn-primary" style={{ padding: '16px 36px', fontSize: '1.05rem' }}>Get a Free Quote</a>
+              <a href="tel:2505494444" className="btn btn-primary" style={{ padding: '16px 36px', fontSize: '1.05rem' }}>Call for a Quote</a>
               <a href="tel:2505494444" className="btn btn-outline" style={{ padding: '16px 36px', fontSize: '1.05rem' }}><FluentEmoji name="phone" size={18} /> 24/7 Emergency</a>
               <RotatingBadge />
             </div>
             <div className="hero-stats fade-in fade-in-delay-3">
               <div className="hero-stat">
-                <div className="hero-stat-number">44+</div>
+                <div className="hero-stat-number">40+</div>
                 <div className="hero-stat-label">Years Experience</div>
               </div>
               <div className="hero-stat">
@@ -171,7 +171,7 @@ export default function HomePage() {
           <div className="section-header">
             <div className="section-badge"><FluentEmoji name="spark" size={14} /> What We Offer</div>
             <h2 className="section-title">Complete Trade Services Under One Roof</h2>
-            <p className="section-subtitle">From electrical and plumbing to gas fitting, refrigeration, and sheet metal — we handle it all with over 44 years of expertise.</p>
+            <p className="section-subtitle">From electrical and plumbing to gas fitting, refrigeration, and sheet metal — we handle it all with experience built since 1983.</p>
           </div>
           <div className="services-grid">
             {services.map(s => {
@@ -205,10 +205,6 @@ export default function HomePage() {
                 <div key={i} className="expertise-bar-group">
                   <div className="expertise-bar-header">
                     <span className="expertise-bar-label">{e.label}</span>
-                    <span className="expertise-bar-value">{e.value}%</span>
-                  </div>
-                  <div className="expertise-bar-track">
-                    <div className="expertise-bar-fill" style={{ width: `${e.value}%` }} />
                   </div>
                 </div>
               ))}
@@ -216,7 +212,7 @@ export default function HomePage() {
             <div>
               <div className="about-visual">
                 <div className="about-stat-card">
-                  <div className="about-stat-number" style={{ color: 'var(--accent)' }}>44+</div>
+                  <div className="about-stat-number" style={{ color: 'var(--accent)' }}>40+</div>
                   <div className="about-stat-label">Years in Business</div>
                 </div>
                 <div className="about-stat-card">
@@ -229,7 +225,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div style={{ marginTop: '16px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
-                {['Bonded & Insured', 'Bryant Authorized', 'Corporate Rates', 'Free Estimates'].map((f, i) => (
+                {['Bonded & Insured', 'Bryant Authorized', 'Residential Service', 'Commercial Service'].map((f, i) => (
                   <div key={i} className="about-feature"><span className="about-feature-icon"><FluentEmoji name="check" size={16} /></span><span className="about-feature-text">{f}</span></div>
                 ))}
               </div>
@@ -348,11 +344,11 @@ export default function HomePage() {
         <div className="container">
           <h2 style={{ marginBottom: '16px', fontSize: 'clamp(2rem, 4vw, 3rem)' }}>Ready to Get Started?</h2>
           <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto 32px', fontSize: '1.1rem' }}>
-            Whether it's an emergency or a planned project, our team is here for you. Call now or request a free quote.
+            Whether it's an emergency or a planned project, our team is here for you. Call now or discuss your project.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="tel:2505494444" className="btn btn-primary" style={{ padding: '18px 40px', fontSize: '1.1rem' }}><FluentEmoji name="phone" size={20} /> Call 250-549-4444</a>
-            <a href="tel:2505494444" className="btn btn-outline" style={{ padding: '18px 40px', fontSize: '1.1rem' }}>Request a Quote</a>
+            <a href="tel:2505494444" className="btn btn-outline" style={{ padding: '18px 40px', fontSize: '1.1rem' }}>Call for a Quote</a>
           </div>
         </div>
       </section>
